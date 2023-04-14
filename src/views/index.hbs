@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jugueteria Cosmica</title>
+    <script src="./js/main.js" type="module" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <header>
+        <div class="headerIzquierda">
+            <div class="title">
+                <h1>
+                    Jugueteria Cósmica
+                </h1>
+            </div>
+            <nav id="nav-bar" class="nav-bar">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link" to="/productos" href="">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" to="/contacto" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" to="/alta" href="alta.html">Alta</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="headerDerecha">
+            <div class="btnCarrito">
+                <div class="cuadroNotificacion">
+                    <a open="" href="" id="notificaciones"></a>
+                </div>
+                <div class="imgCarrito">
+                    <a open="" href="" id="carrito"><img src="./img/logo/carrito.png" alt="icono carrito" class="icon"></a>
+                </div>
+                <div id="modal" class="modal">
+                </div>
+            </div>
+            
+        </div>
+    </header>
+    <main>
+        
+    </main>
+    <script type="module">
+        history.pushState(null, null, {{url}})
+    </script>
+</body>
+
+</html>

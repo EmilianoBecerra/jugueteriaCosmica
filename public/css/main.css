@@ -1,0 +1,761 @@
+@charset "UTF-8";
+* {
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+body {
+  background-color: rgb(201, 200, 200);
+}
+
+header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+header .headerIzquierda {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-items: baseline;
+}
+header .headerIzquierda h1 {
+  color: #05031f;
+  padding: 2px;
+  font-weight: 900;
+  font-size: 30px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+}
+header .headerIzquierda .nav-bar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  height: 50px;
+}
+header .headerIzquierda .nav-bar .nav-list {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+header .headerIzquierda .nav-bar .nav-list .nav-item {
+  list-style: none;
+  border: 2px solid black;
+  margin: 0px 3px;
+  border-radius: 5px;
+}
+header .headerIzquierda .nav-bar .nav-list .nav-item .nav-link {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  text-decoration-color: none;
+  color: black;
+  text-align: center;
+  padding: 3px;
+  font-size: 12px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+header .headerDerecha .btnCarrito {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+header .headerDerecha .btnCarrito .cuadroNotificacion {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  background-color: #369743;
+  padding: 2px;
+  top: 28px;
+  right: 40px;
+  border-radius: 50%;
+}
+header .headerDerecha .btnCarrito .cuadroNotificacion #notificaciones {
+  font-size: 14px;
+  text-decoration: none;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-decoration: none;
+  color: white;
+}
+header .headerDerecha .btnCarrito .imgCarrito .icon {
+  width: 40px;
+  height: 47px;
+  margin: 0px 8px;
+}
+header .headerDerecha .btnCarrito .modal {
+  position: fixed;
+  right: 6px;
+  top: 10px;
+  width: 97%;
+  border-radius: 10px;
+  padding: 5px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  transform: translateX(100%);
+  transition-duration: 0.8s;
+}
+header .headerDerecha .btnCarrito .modal .carritoProductos {
+  width: 100%;
+  height: 400px;
+  overflow: auto;
+}
+header .headerDerecha .btnCarrito .modal .carritoProductos .products {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 90px;
+  margin: 5px;
+  border-bottom: 1px solid black;
+  padding: 10px;
+  font-size: 18px;
+}
+header .headerDerecha .btnCarrito .modal .carritoProductos .products img {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+header .headerDerecha .btnCarrito .modal .carritoProductos .products .product {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .infoProduct {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .infoProduct .descriptionProduct {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .infoProduct .descriptionProduct .nombre {
+  padding: 5px;
+}
+header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .infoProduct .descriptionProduct .precioProductModal {
+  padding: 10px;
+}
+header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .infoProduct .descriptionProduct .btnAñadir {
+  width: 15px;
+  border-radius: 5px;
+  background-color: #05031f;
+  color: white;
+}
+header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .cantProduct {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .cantProduct .spanDelete {
+  width: 80px;
+  margin: 0px 0px 0px 14px;
+}
+header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .cantProduct .spanDelete .deleteProduct {
+  width: 100%;
+  height: 20px;
+  background-color: #05031f;
+  color: white;
+}
+header .headerDerecha .btnCarrito .modal .divTotal {
+  margin: 10px;
+  text-align: center;
+}
+header .headerDerecha .btnCarrito .modal .divTotal .total {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+}
+header .headerDerecha .btnCarrito .modal .divPagar {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+header .headerDerecha .btnCarrito .modal .divPagar .btnPagar {
+  margin: 25px 0px 10px 100px;
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  margin: 0px 10px;
+  background-color: #05031f;
+  color: white;
+}
+header .headerDerecha .btnCarrito .modalVisible {
+  position: absolute;
+  transform: translateX(0);
+  transition-duration: 0.8s;
+  background-color: rgba(255, 255, 255, 0.952);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 700;
+}
+header .headerDerecha .btnCarrito .closeBtn {
+  width: 24px;
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  background-color: black;
+  padding: 2px;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+header .headerDerecha .btnCarrito .closeBtn:hover {
+  background-color: #17144d;
+}
+header .btnLink-container .icon {
+  width: 40px;
+  height: 40px;
+  margin: 0px 8px;
+}
+
+main .section-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .section-cards .cards-container {
+  display: grid;
+  grid-template-columns: repeat(1, 5fr);
+  grid-auto-rows: 1;
+  gap: 8px;
+}
+main .section-cards .cards-container .card {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 280px;
+  padding: 2px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: white;
+  background-color: #05031f;
+  box-shadow: 0 2px 10px black;
+}
+main .section-cards .cards-container .card .detailProducto {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
+  align-items: start;
+  width: 100%;
+  height: 100%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+main .section-cards .cards-container .card .detailProducto .card__image {
+  width: 50%;
+  height: 100%;
+}
+main .section-cards .cards-container .card .detailProducto .card__image .card__heading {
+  width: 300px;
+  font-size: 30px;
+  text-align: start;
+  margin: 8px;
+}
+main .section-cards .cards-container .card .detailProducto .card__image .imagenProductos {
+  padding: 10px;
+  background-color: rgb(201, 200, 200);
+  width: 150px;
+  height: 150px;
+  margin: 8px;
+  border-radius: 4px;
+}
+main .section-cards .cards-container .card .detailProducto .card__content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-items: start;
+  width: 200px;
+  height: 80%;
+  margin-top: 50px;
+}
+main .section-cards .cards-container .card .detailProducto .card__content .card__description {
+  font-size: 20px;
+}
+main .section-cards .cards-container .card .detailProducto .card__content .card__description .productDescription {
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 100;
+}
+main .section-cards .cards-container .card .detailProducto .card__content .card__description .precio {
+  font-size: 24px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 600;
+}
+main .section-cards .cards-container .card button {
+  width: 100px;
+  height: 30px;
+  border-radius: 8px;
+  margin: 15px;
+  padding: 0px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+main #section-alta {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+main #section-alta h2 {
+  font-size: 42px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+main #section-alta .formAlta {
+  width: 600px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  padding: 8px;
+  border-radius: 8px;
+}
+main #section-alta .formAlta div {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+main #section-alta .formAlta div label {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+main #section-alta .formAlta div input, main #section-alta .formAlta div textarea {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  padding: 8px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+main #section-alta .formAlta div input:focus, main #section-alta .formAlta div textarea:focus {
+  background-color: #05031f;
+  color: white;
+}
+main #section-alta .formAlta button {
+  width: 150px;
+  height: 30px;
+  border-radius: 8px;
+  margin-top: 12px;
+  background-color: #05031f;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-size: 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+main #contactoSection {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+main #contactoSection h2 {
+  font-size: 42px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+main #contactoSection .formContacto {
+  width: 600px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  padding: 8px;
+  border-radius: 8px;
+}
+main #contactoSection .formContacto div {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+main #contactoSection .formContacto div label {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+main #contactoSection .formContacto div input, main #contactoSection .formContacto div textarea {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  padding: 8px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+main #contactoSection .formContacto div input:focus, main #contactoSection .formContacto div textarea:focus {
+  background-color: #05031f;
+  color: white;
+}
+main #contactoSection .formContacto button {
+  width: 150px;
+  height: 30px;
+  border-radius: 8px;
+  margin-top: 12px;
+  background-color: #05031f;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-size: 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+@media (min-width: 820px) and (max-width: 999px) {
+  header {
+    margin-bottom: 20px;
+  }
+  header .headerIzquierda {
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+  header .headerIzquierda .nav-bar {
+    width: 280px;
+    margin-left: 20px;
+  }
+  header .headerIzquierda .nav-bar .nav-list .nav-item {
+    margin-left: 5px;
+    padding: 0px 5px 0px 2px;
+  }
+  header .headerIzquierda .nav-bar .nav-list .nav-item .nav-link {
+    font-size: 16px;
+  }
+  header .headerDerecha .btnCarrito .cuadroNotificacion {
+    top: 10px;
+  }
+  header .headerDerecha .btnCarrito .modal {
+    transform: translateX(100%);
+    transition-duration: 0.6s;
+  }
+  header .headerDerecha .btnCarrito .modalVisible {
+    transform: translateX(0);
+    transition-duration: 0.6s;
+  }
+  main .section-cards .cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 5fr);
+    grid-auto-rows: 1;
+    gap: 26px;
+  }
+}
+@media (min-width: 1000px) and (max-width: 1800px) {
+  header .headerIzquierda {
+    flex-flow: row nowrap;
+    align-items: baseline;
+  }
+  header .headerIzquierda .title {
+    width: auto;
+  }
+  header .headerIzquierda .title h1 {
+    color: #05031f;
+    font-weight: 900;
+    font-size: 50px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+  header .headerIzquierda .nav-bar {
+    margin: 0px 0px 0px 15px;
+    width: 300px;
+    height: 70px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  header .headerIzquierda .nav-bar .nav-list {
+    width: 100px;
+  }
+  header .headerIzquierda .nav-bar .nav-list .nav-item {
+    width: 90px;
+    list-style: none;
+    border: 2px solid black;
+    margin: 0px 10px;
+    border-radius: 5px;
+  }
+  header .headerIzquierda .nav-bar .nav-list .nav-item:hover {
+    background-color: #05031f;
+  }
+  header .headerIzquierda .nav-bar .nav-list .nav-item .nav-link {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    text-decoration-color: none;
+    color: black;
+    text-align: center;
+    padding: 3px;
+    font-size: 18px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  }
+  header .headerIzquierda .nav-bar .nav-list .nav-item .nav-link:hover {
+    color: white;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  }
+  header .headerDerecha .btnCarrito {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  header .headerDerecha .btnCarrito .cuadroNotificacion {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 27px;
+    height: 27px;
+    background-color: #369743;
+    padding: 2px;
+    top: 24px;
+    right: 40px;
+    border-radius: 50%;
+  }
+  header .headerDerecha .btnCarrito .cuadroNotificacion #notificaciones {
+    font-size: 16px;
+    text-decoration: none;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    text-decoration: none;
+    color: white;
+  }
+  header .headerDerecha .btnCarrito .imgCarrito .icon {
+    width: 47px;
+    height: 47px;
+    margin: 0px 8px;
+  }
+  header .headerDerecha .btnCarrito .modal {
+    position: fixed;
+    right: 6px;
+    top: 10px;
+    width: 42%;
+    height: 90%;
+    border-radius: 10px;
+    padding: 5px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    transform: translateX(100%);
+    transition-duration: 0.8s;
+  }
+  header .headerDerecha .btnCarrito .modal .carritoProductos {
+    width: 100%;
+    height: 80%;
+    overflow: auto;
+  }
+  header .headerDerecha .btnCarrito .modal .carritoProductos .products {
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    grid-template-rows: 0.5fr;
+    margin: 5px;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    font-size: 18px;
+  }
+  header .headerDerecha .btnCarrito .modal .carritoProductos .products .imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    border: 1px solid black;
+    padding: 5px;
+    background-color: rgb(201, 200, 200);
+  }
+  header .headerDerecha .btnCarrito .modal .carritoProductos .products .imagen img {
+    width: 100px;
+    height: 100px;
+  }
+  header .headerDerecha .btnCarrito .modal .carritoProductos .products .product {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 18px;
+  }
+  header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .infoProduct {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .infoProduct .descriptionProduct {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .infoProduct .descriptionProduct .nombre {
+    padding: 5px;
+  }
+  header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .infoProduct .descriptionProduct .precioProductModal {
+    padding: 10px;
+  }
+  header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .infoProduct .descriptionProduct .btnAñadir {
+    width: 15px;
+    border-radius: 5px;
+    background-color: #05031f;
+    color: white;
+    cursor: pointer;
+  }
+  header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .infoProduct .descriptionProduct .btnAñadir:hover {
+    background-color: #17144d;
+  }
+  header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .cantProduct {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .cantProduct .spanDelete {
+    width: auto;
+    height: auto;
+    margin: 14px;
+  }
+  header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .cantProduct .spanDelete .deleteProduct {
+    width: 150px;
+    height: 30px;
+    background-color: #05031f;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+  }
+  header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .cantProduct .spanDelete .deleteProduct:hover {
+    background-color: #17144d;
+  }
+  header .headerDerecha .btnCarrito .modal .divTotal {
+    margin: 10px;
+    text-align: center;
+  }
+  header .headerDerecha .btnCarrito .modal .divTotal .total {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  header .headerDerecha .btnCarrito .modal .divPagar {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  header .headerDerecha .btnCarrito .modal .divPagar .btnPagar {
+    margin: 25px 0px 10px 100px;
+    width: 150px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 5px;
+    margin: 0px 10px;
+    background-color: #05031f;
+    color: white;
+    cursor: pointer;
+  }
+  header .headerDerecha .btnCarrito .modal .divPagar .btnPagar:hover {
+    background-color: #17144d;
+  }
+  header .headerDerecha .btnCarrito .modalVisible {
+    transform: translateX(0);
+    transition-duration: 0.8s;
+    background-color: rgba(255, 255, 255, 0.952);
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-weight: 700;
+  }
+  header .headerDerecha .btnCarrito .closeBtn {
+    width: 24px;
+    position: absolute;
+    top: 2px;
+    right: 10px;
+    background-color: black;
+    padding: 2px;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 30px;
+  }
+  header .headerDerecha .btnCarrito .closeBtn:hover {
+    background-color: #17144d;
+  }
+  header .btnLink-container .icon {
+    width: 40px;
+    height: 40px;
+    margin: 0px 8px;
+  }
+  main .section-cards .cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 60px;
+  }
+  main .section-cards .cards-container .card {
+    width: 400px;
+    transition: 0.5s;
+    transition-timing-function: linear;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-size: 12px;
+    color: white;
+    background-color: #05031f;
+    box-shadow: 0 2px 10px black;
+    cursor: default;
+  }
+  main .section-cards .cards-container .card:hover {
+    background-color: rgb(212, 212, 212);
+    box-shadow: 3px 3px 20px #05031f;
+    font-weight: bold;
+    color: black;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  }
+  main .section-cards .cards-container .card:hover .imagenProductos {
+    box-shadow: 3px 3px 30px #05031f;
+    transition: 0.5s;
+    transition-timing-function: linear;
+    background-color: #05031f !important;
+  }
+  main .section-cards .cards-container .card:hover button {
+    color: white;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    background-color: #05031f;
+    transition: 0.5s;
+    transition-timing-function: linear;
+    cursor: pointer;
+  }
+  main .section-cards .cards-container .card .detailProducto .card__content .card__description .productDescription {
+    font-size: 16px;
+  }
+  main .section-cards .cards-container .card .detailProducto .precio {
+    font-size: 30px;
+  }
+  main .section-cards .cards-container .card button {
+    width: 150px;
+    height: 45px;
+    padding: 4px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
