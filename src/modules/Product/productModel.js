@@ -7,11 +7,7 @@ const ProdcutSchema = new mongoose.Schema({
     "stock": {type: Number, required: true, min:0},
     "marca": String,
     "categoria": String,
-    "descripcionCorta": {type: String, required: true},
-    "descripcionLarga": String,
-    "envio": String,
-    "edadDesde": Number,
-    "edadHasta": Number,
+    "descripcion": {type: String, required: true},
     "imagen": String 
 })
 

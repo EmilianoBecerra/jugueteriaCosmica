@@ -26,9 +26,21 @@ export const getId = async (req, res)=>{
 
 
 export const addProduct = async (req,res)=>{
-   const body = req.body;
+
+    const body= {
+        "id":req.body.idNumber,
+        "nombre": req.body.nombre,
+        "marca": req.body.marca,
+        "precio": req.body.precio,
+        "stock": req.body.stock,
+        "categoria": req.body.categoria,
+        "descripcion": req.body.descripcion,
+        "imagen": req.file.filename
+    }
+    const obectBody = body
+
     try{
-       const product = ProductModel.create(body)
+       const product = ProductModel.create(obectBody)
         res.json(product || {})
     }
     catch(e){

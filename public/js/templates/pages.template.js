@@ -10,7 +10,7 @@ export const productosTemplate = Handlebars.compile(`
                 </div>
                 <div class="card__content">
                     <div class="card__description">
-                        <p class="productDescription">{{this.descripcionCorta}}</p>
+                        <p class="productDescription">{{this.descripcion}}</p>
                         <span class="precio"> $ {{this.precio}}</span>
                     </div>
                 </div>
@@ -25,66 +25,50 @@ export const altaTemplate = Handlebars.compile(`
     <section id="section-alta">
         
         <h2>Crear Producto</h2>
-        <form action=""  class="formAlta" >
+        <form id="form"action="http://localhost:8080/productos"  class="formAlta"  >
             <div class="field" >
                 <label for="id">ID</label>
-                <input type="text" id="idNumber" >
+                <input type="text" name="idNumber">
             </div>
             <div class="field">
                 <label for="nombre" >Nombre*</label>
-                <input type="text" id="nombre" class="obligatorio">
+                <input type="text"  class="obligatorio" name="nombre">
                 <span class="errMsg"></span>
             </div>
 
             <div class="field">
                 <label for="">Marca</label>
-                <input type="text" id="marca">
+                <input type="text"  name="marca">
                 <span class="errMsg"></span>
             </div>
 
             <div class="field">
                 <label for="">Precio *</label>
-                <input type="text" id="precio" class="obligatorio">
+                <input type="text"  class="obligatorio" name="precio">
                 <span class="errMsg"></span>
             </div>
 
             <div class="field">
                 <label for="">Stock *</label>
-                <input type="text" id="stock" class="obligatorio">
+                <input type="text"  class="obligatorio" name="stock">
                 <span class="errMsg"></span>
             </div>
 
             <div class="field">
                 <label for="">Categoria</label>
-                <input type="text" id="categoria">
+                <input type="text"  name="categoria">
                 <span class="errMsg"></span>
             </div>
 
             <div class="field">
                 <label for="">Descripcion Corta *</label>
-                <textarea  id="descripcionCorta" condicion="obligatorio"></textarea>
+                <textarea  condicion="obligatorio" name="descripcion"></textarea>
                 <span class="errMsg"></span>
             </div>
-
             <div class="field">
-                <label for="">Descripcion Larga *</label>
-                <textarea  id="descripcionLarga" condicion="obligatorio"></textarea>
-                <span class="errMsg"></span>
+                <label for="imagen">Imagen *</label>
+                <input type="file" name="archivo"  class="obligatorio" >
             </div>
-
-            <div class="field">
-                <label for="">Desde edad *:</label>
-                <input type="number" id="edadDesde" class="obligatorio">
-                <span class="errMsg"></span>
-            </div>
-
-            <div class="field">
-                <label for="">Hasta edad *:</label>
-                <input type="number" id="edadHasta" class="obligatorio">
-                <span class="errMsg"></span>
-            </div>
-
-            
 
             <button type="submit" id="envioForm" clase="envio">Crear Producto</button>
         </form>
@@ -115,9 +99,3 @@ export const contactoTemplate = Handlebars.compile(`
     </section>
 `)
 
-
-
-/*<div class="field">
-                <label for="imagen">Imagen *</label>
-                <input type="file" name="archivo" id="imagen" class="obligatorio" >
-            </div>*/
