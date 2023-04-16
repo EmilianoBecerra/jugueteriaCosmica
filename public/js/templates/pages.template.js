@@ -99,3 +99,48 @@ export const contactoTemplate = Handlebars.compile(`
     </section>
 `)
 
+export const pagarTemplate = Handlebars.compile(`
+
+    <section id="sectionPayCart">
+        <h1 class="tittlePayCart">
+            PAGAR
+        </h1>
+        <div class="sectionPayCart">
+            {{#each cart}}
+            <div class="productPayCart">
+                <h2 class="productNamePayCart">
+                    {{this.nombre}}
+                </h2>
+                <div class="descriptionProductPayCartContainer">
+                    <div>
+                        <img src=" ./../../img/productos/{{this.imagen}}" alt="" class="imageProductPayCart">
+                    </div>
+                    <div class="descriptionProductPayCart"> 
+                        <p class="cantProductPayCart">
+                            Cantidad : {{this.cantidad}}
+                        </p>
+                        <p>
+                            Descripcion: {{this.descripcion}}
+                        </p>
+                    </div>
+                </div>
+            </div>    
+            {{/each}}
+        </div>    
+        <div class="payContainerCartPay">
+            <span class='spanTotalCartPay'>
+                Total: {{total}}
+            </span> 
+            
+            <a href='/productos' class='linkBtnPay'>
+                <button type='submit' class="btnPayCartPay"> 
+                    Pagar 
+                </button>
+
+            </a> 
+        </div>
+    </section>
+
+
+
+`)

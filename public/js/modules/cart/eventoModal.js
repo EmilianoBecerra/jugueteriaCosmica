@@ -22,4 +22,14 @@ document.body.addEventListener("keydown", ev=>{
 })
 
 
+document.body.addEventListener('click', ev=>{
+    const element = ev.target.closest(".btnPagar")
+
+    if(element){
+        ev.preventDefault()
+        document.querySelector("#modal").classList.remove("modalVisible")
+    }
+
+})
+
 

@@ -7,7 +7,6 @@ const ProductoRouter = Router();
 
 ProductoRouter.get("/productos", ProductoController.getAll); 
 ProductoRouter.get("/productos/:id", ProductoController.getId);
-ProductoRouter.get("/producto/:name", ProductoController.getName);
 ProductoRouter.post("/alta", upload.single("archivo"), ProductoController.addProduct)
 ProductoRouter.patch("/EditProducto", ProductoController.update)
 ProductoRouter.delete("/producto/:id", ProductoController.deleteOne)

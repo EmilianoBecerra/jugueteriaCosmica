@@ -40,7 +40,11 @@ export const cartTemplate = Handlebars.compile(`
     </span>
 </div>
 <div class="divPagar">
-    <button  class="btnPagar"> Pagar </button>
+    <a to="/pagar" href="/pagar" class="linkPay">
+        <button  class="btnPagar" id="btnPagar">
+            Pagar 
+        </button>
+    </a>
 </div>
 `)
 

@@ -74,16 +74,3 @@ export const deleteOne = async (req,res)=>{
     }
     
 }
-
-
-export const getName = async (req,res)=>{
-    const name = req.params;
-    try{
-        const product = ProductModel.findOne({nombre:name});
-        res.json(product)
-    }
-    catch(e){
-        res.status(400).json({e, errMSg: "Los datos de busqueda son incorrectos"})
-    }
-    
-}

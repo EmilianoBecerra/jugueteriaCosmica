@@ -185,7 +185,11 @@ header .headerDerecha .btnCarrito .modal .divPagar {
   justify-content: center;
   align-items: center;
 }
-header .headerDerecha .btnCarrito .modal .divPagar .btnPagar {
+header .headerDerecha .btnCarrito .modal .divPagar .linkPay {
+  text-decoration: none;
+  color: white;
+}
+header .headerDerecha .btnCarrito .modal .divPagar .linkPay .btnPagar {
   margin: 25px 0px 10px 100px;
   width: 100px;
   height: 30px;
@@ -427,6 +431,70 @@ main #contactoSection .formContacto button {
   text-align: center;
   font-size: 16px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+main #sectionPayCart .tittlePayCart {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #05031f;
+  margin-bottom: 10px;
+}
+main #sectionPayCart .sectionPayCart .productPayCart {
+  margin-left: 10px;
+  padding: 0px;
+  margin-top: 0px;
+}
+main #sectionPayCart .sectionPayCart .productPayCart .productNamePayCart {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+main #sectionPayCart .sectionPayCart .productPayCart .descriptionProductPayCartContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid black;
+  padding: 5px;
+}
+main #sectionPayCart .sectionPayCart .productPayCart .descriptionProductPayCartContainer .imageProductPayCart {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+main #sectionPayCart .sectionPayCart .productPayCart .descriptionProductPayCartContainer .descriptionProductPayCart {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 10px;
+}
+main #sectionPayCart .sectionPayCart .productPayCart .descriptionProductPayCartContainer .descriptionProductPayCart p {
+  margin: 5px;
+  padding: 0px;
+}
+main #sectionPayCart .payContainerCartPay {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+main #sectionPayCart .payContainerCartPay .spanTotalCartPay {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #05031f;
+  margin-top: 10px;
+  font-weight: 600;
+}
+main #sectionPayCart .payContainerCartPay .linkBtnPay {
+  width: 150px;
+  height: 30px;
+}
+main #sectionPayCart .payContainerCartPay .linkBtnPay .btnPayCartPay {
+  margin-top: 5px;
+  width: 100%;
+  height: 100%;
+  background-color: #05031f;
+  color: white;
+  border-radius: 5px;
 }
 
 @media (min-width: 820px) and (max-width: 999px) {
