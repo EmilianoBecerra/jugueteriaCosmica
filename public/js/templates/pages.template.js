@@ -2,7 +2,7 @@ export const productosTemplate = Handlebars.compile(`
 <section class="section-cards">
     <div class="cards-container">
         {{#each productos}}
-        <a class="card"  href="">
+        <a class="card">
             <article class="detailProducto">
                 <div class="card__image">
                     <h3 class="card__heading">{{this.nombre}}</h3>
@@ -105,23 +105,26 @@ export const pagarTemplate = Handlebars.compile(`
         <h1 class="tittlePayCart">
             PAGAR
         </h1>
-        <div class="sectionPayCart">
+        <div class="containerPayCart">
             {{#each cart}}
             <div class="productPayCart">
                 <h2 class="productNamePayCart">
                     {{this.nombre}}
                 </h2>
                 <div class="descriptionProductPayCartContainer">
-                    <div>
+                    <div class="divImage">
                         <img src=" ./../../img/productos/{{this.imagen}}" alt="" class="imageProductPayCart">
                     </div>
                     <div class="descriptionProductPayCart"> 
-                        <p class="cantProductPayCart">
+                        <span class="quantityProductPayCart">
                             Cantidad : {{this.cantidad}}
-                        </p>
-                        <p>
+                        </span>
+                        <span class="productDescription">
                             Descripcion: {{this.descripcion}}
-                        </p>
+                        </span>
+                        <span>
+                            Precio: $ {{this.precio}}
+                        </span>
                     </div>
                 </div>
             </div>    
@@ -129,7 +132,7 @@ export const pagarTemplate = Handlebars.compile(`
         </div>    
         <div class="payContainerCartPay">
             <span class='spanTotalCartPay'>
-                Total: {{total}}
+                Total a pagar: $ {{total}}
             </span> 
             
             <a href='/productos' class='linkBtnPay'>

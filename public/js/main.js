@@ -36,7 +36,10 @@ addRoute("/contacto", () => {
 
 addRoute("/pagar", ()=>{
     const cart = localStorage.cart ? JSON.parse(localStorage.cart) : []
-    document.querySelector('main').innerHTML = pagarTemplate({cart});
+    const total = cart.reduce((acc, producto)=>{
+        return acc+producto.subtotal
+    },0) 
+    document.querySelector('main').innerHTML = pagarTemplate({cart, total});
     addCartBD()
     deleteStorage();
 })

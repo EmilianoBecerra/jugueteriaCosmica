@@ -3,885 +3,1051 @@ $fontPrimaria: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 $fontTexto: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 $colorHover: #17144d;
 $fondoClaro: rgb(201, 200, 200);
-*{
-    border: 0;
-    padding: 0;
-    box-sizing: border-box; 
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+* {
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-body{
-    background-color: $fondoClaro;
+body {
+  background-color: $fondoClaro;
 }
 
-header{
+header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  .headerIzquierda {
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    .headerIzquierda{
-        display: flex ;
-        flex-flow: column nowrap;
-        justify-content: start;
-        align-items: baseline;
-        h1{
-            color: $colorPrimario;
-            padding: 2px;
-            font-weight: 900;
-            font-size: 30px;
-            font-family:$fontPrimaria ;
-            margin: 0;
-        }
-        .nav-bar{
-            margin: 0;
-            padding: 0;
-            width: 200px;
-            height: 50px;
-            .nav-list{
-                display: flex;
-                flex-flow: row nowrap;
-                justify-content: center;
-                align-items: center;
-                .nav-item{
-                    list-style: none;
-                    border: 2px solid black;
-                    margin: 0px 3px;
-                    border-radius: 5px;
-                    .nav-link{
-                        width: 100%;
-                        height: 100%;
-                        text-decoration: none;
-                        text-decoration-color: none;
-                        color: black;
-                        text-align: center;
-                        padding: 3px;
-                        font-size: 12px;
-                        font-family:$fontTexto;
-                    }
-                }
-            }
-        }
-    }
-    
-    .headerDerecha{
-        .btnCarrito{
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: center;
-            align-items: center;
-            .cuadroNotificacion{
-                position: absolute;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 24px;
-                height: 24px;
-                background-color:#369743;
-                padding: 2px;
-                top: 28px;
-                right: 40px;
-                border-radius: 50%;
-                #notificaciones{
-                    font-size: 14px;
-                    text-decoration: none;
-                    font-family: $fontTexto;
-                    text-decoration: none;
-                    color: white;
-                }
-            }
-            .imgCarrito{
-                .icon{
-                    width: 40px;
-                    height: 47px;
-                    margin: 0px 8px;
-                }
-            }
-            .modal{
-                position: fixed;
-                right: 6px;
-                top: 10px;
-                width: 97%;
-                border-radius: 10px;
-                padding: 5px;
-                font-family: $fontTexto;
-                transform: translateX(100%);
-                transition-duration: 0.8s;
-                .carritoProductos{
-                    width: 100%;
-                    height: 400px;
-                    overflow: auto;
-                    .products{
-                        display: grid;
-                        grid-template-columns: 1fr 4fr;
-                        grid-template-rows: 90px;
-                        margin: 5px;
-                        border-bottom: 1px solid black;
-                        padding: 10px;
-                        font-size: 18px;
-                        img{
-                            width: 100%;
-                            height: 100%;
-                            margin: 0px;
-                            padding: 0px;
-                        }
-                        .product{
-                            display: flex;
-                            flex-flow: column nowrap;
-                            justify-content: center;
-                            align-items: center;
-                            padding: 10px;
-                            .infoProduct{
-                                display: flex;
-                                flex-flow: column nowrap;
-                                justify-content: center;
-                                align-items: center;
-                                .descriptionProduct{
-                                    display: flex;
-                                    flex-flow: column nowrap;
-                                    justify-content: center;
-                                    align-items: center;
-                                    .nombre{
-                                        padding: 5px;
-                                    }
-                                    .precioProductModal{
-                                        padding: 10px;
-                                    }
-                                    .btnAñadir{
-                                        width: 15px;
-                                        border-radius: 5px;
-                                        background-color: $colorPrimario;
-                                        color: white;
-                                    }
-                                }
-                            }
-                            .cantProduct{
-                                display: flex;
-                                flex-flow: column nowrap;
-                                justify-content: center;
-                                align-items: center;
-                                .spanDelete{
-                                    width: 80px;
-                                    margin: 0px 0px 0px 14px;
-                                    .deleteProduct{
-                                        width: 100%;
-                                        height: 20px;
-                                        background-color: $colorPrimario;
-                                        color: white;
-                                        
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                .divTotal{
-                    margin: 10px;
-                    text-align: center;
-                    .total{
-                        font-family: $fontPrimaria;
-                        font-weight: bold;
-                        font-size: 18px;
-                    }
-                }
-                .divPagar{
-                    width: 100%;
-                    display: flex;
-                    flex-flow: row nowrap;
-                    justify-content: center;
-                    align-items: center;
-                    .linkPay{
-                        text-decoration: none;
-                        color: white;
-                        .btnPagar{
-                            margin: 25px 0px 10px 100px;
-                            width: 100px;
-                            height: 30px;
-                            border-radius: 5px;
-                            margin: 0px 10px;
-                            background-color: $colorPrimario;
-                            color: white;
-                           
-                        }
-                    }
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: baseline;
 
-                }
-                
-            }
-            .modalVisible{
-                position: absolute;
-                transform: translateX(0);
-                transition-duration: 0.8s;
-                background-color: rgba(255, 255, 255, 0.952);
-                font-family: $fontTexto;
-                font-weight: 700;
-                }
-                .closeBtn{
-                    width: 24px;
-                    position: absolute;
-                    top: 2px;
-                    right: 10px;
-                    background-color: black;
-                    padding: 2px;
-                    border-radius: 50%;
-                    text-align: center;
-                    color: white;
-                    cursor: pointer;
-                    margin-bottom: 30px;
-                    &:hover{
-                        background-color: $colorHover;
-                    }
-                }
-            }
-        }
-        .btnLink-container{
-            .icon{
-                width: 40px;
-                height: 40px;
-                margin: 0px 8px;
-            }
-        }
+    h1 {
+      color: $colorPrimario;
+      padding: 2px;
+      font-weight: 900;
+      font-size: 30px;
+      font-family: $fontPrimaria ;
+      margin: 0;
     }
 
+    .nav-bar {
+      margin: 0;
+      padding: 0;
+      width: 200px;
+      height: 50px;
 
-main{
-    .section-cards{
+      .nav-list {
         display: flex;
+        flex-flow: row nowrap;
         justify-content: center;
         align-items: center;
-        .cards-container{
-            display: grid;
-            grid-template-columns: repeat(1, 5fr);
-            grid-auto-rows: 1;
-            gap: 8px;
-            .card{
-                display: flex;
-                flex-flow: column nowrap;
-                justify-content: center;
-                align-items: center;
-                width: 350px;
-                height: 280px;
-                padding: 2px;
-                text-decoration: none;
-                border-radius: 10px;
-                font-family: $fontTexto;
-                color: white;
-                background-color: $colorPrimario;
-                box-shadow: 0 2px 10px black;
-                .detailProducto{
-                    display: flex;
-                    flex-flow: row nowrap;
-                    justify-content: start;
-                    align-items: start;
-                    width: 100%;
-                    height: 100%;
-                    font-family: $fontTexto;
-                    .card__image{ 
-                        width: 50%;
-                        height: 100%;
-                        .card__heading{
-                            width: 300px;
-                            font-size: 30px;
-                            text-align: start;
-                            margin: 8px;
-                        }
-                        .imagenProductos{
-                            padding: 10px;
-                            background-color: rgb(201, 200, 200);
-                            width: 150px;
-                            height: 150px;
-                            margin: 8px;
-                            border-radius: 4px;
-                        } 
-                    }
-                    .card__content{
-                        display: flex;
-                        flex-flow: column nowrap;
-                        justify-content: start;
-                        align-items: start;
-                        width: 200px;
-                        height: 80%;
-                        margin-top: 50px;
-                        .card__description{
-                            font-size: 20px;
-                            .productDescription{
-                                margin-bottom: 5px;
-                                font-size: 14px;
-                                font-family: $fontTexto;
-                                font-weight: 100;
-                            }
-                            .precio{
-                                font-size: 24px;
-                                font-family: $fontPrimaria;
-                                font-weight: 600;
-                            }
-                        }
-                    }
-                }
-                button{
-                    width: 100px;
-                    height: 30px;
-                    border-radius: 8px;
-                    margin: 15px;
-                    padding: 0px;
-                    font-family: $fontTexto;
-                }
-            }
-        }
-    }
 
-    #section-alta{
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-        align-items: center;
-        h2{
-            font-size: 42px;
-            font-family: $fontPrimaria;
-        }
-        .formAlta{
-            width: 600px;
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: center;
-            align-items: center;
-            border: 2px solid black;
-            padding: 8px;
-            border-radius: 8px;
-            div{
-                display: flex;
-                flex-flow: column nowrap;
-                justify-content: center;
-                align-items: center;
-                width: 50%;
-                
-                label{
-                    font-weight: 600;
-                    font-size: 16px;
-                    margin-bottom: 10px;
-                    font-family: $fontPrimaria;
-                }
-                input, textarea{
-                    width: 100%;
-                    height: 30px;
-                    margin-bottom: 10px;
-                    text-align: center;
-                    font-family:$fontPrimaria;
-                    font-size: 16px;
-                    padding: 8px;
-                    overflow: hidden;
-                    border-radius: 8px;
-                    &:focus{
-                        background-color: $colorPrimario;
-                        color: white;
-                    }
-                }
-            }
-            button{
-                width: 150px;
-                height: 30px;
-                border-radius: 8px;
-                margin-top: 12px;
-                background-color: $colorPrimario;
-                color:white;
-                text-decoration: none;
-                text-align: center;
-                font-size: 16px;
-                font-family: $fontPrimaria;    
-            }
-        }
-    }
-    #contactoSection{
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-        align-items: center;
-        h2{
-            font-size: 42px;
-            font-family: $fontPrimaria;
-        }
-        .formContacto{
-            width: 600px;
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: center;
-            align-items: center;
-            border: 2px solid black;
-            padding: 8px;
-            border-radius: 8px;
-            div{
-                display: flex;
-                flex-flow: column nowrap;
-                justify-content: center;
-                align-items: center;
-                width: 50%;
-                label{
-                    font-weight: 600;
-                    font-size: 16px;
-                    margin-bottom: 10px;
-                    font-family: $fontPrimaria;
-                }
-                input, textarea{
-                    width: 100%;
-                    height: 30px;
-                    margin-bottom: 10px;
-                    text-align: center;
-                    font-family:$fontPrimaria;
-                    font-size: 16px;
-                    padding: 8px;
-                    overflow: hidden;
-                    border-radius: 8px;
-                    &:focus{
-                        background-color: $colorPrimario;
-                        color: white;
-                    }
-                }
-            }
-            button{
-                width: 150px;
-                height: 30px;
-                border-radius: 8px;
-                margin-top: 12px;
-                background-color: $colorPrimario;
-                color:white;
-                text-decoration: none;
-                text-align: center;
-                font-size: 16px;
-                font-family: $fontPrimaria;    
-            }
-        }
-    }
-    #sectionPayCart{
-        .tittlePayCart{
+        .nav-item {
+          list-style: none;
+          border: 2px solid black;
+          margin: 0px 3px;
+          border-radius: 5px;
+
+          .nav-link {
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            text-decoration-color: none;
+            color: black;
+            text-align: center;
+            padding: 3px;
+            font-size: 12px;
             font-family: $fontTexto;
-            color: $colorPrimario;
-            margin-bottom: 10px;
+          }
         }
-        .sectionPayCart{
-           
-            .productPayCart{
-                margin-left: 10px;
-                padding: 0px;
-                margin-top: 0px;
-                .productNamePayCart{
-                    font-family: $fontTexto;
-                    margin: 0px;
-                    padding: 0px;
+      }
+    }
+  }
+
+  .headerDerecha {
+    .btnCarrito {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+
+      .cuadroNotificacion {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+        background-color: #369743;
+        padding: 2px;
+        top: 28px;
+        right: 40px;
+        border-radius: 50%;
+
+        #notificaciones {
+          font-size: 14px;
+          text-decoration: none;
+          font-family: $fontTexto;
+          text-decoration: none;
+          color: white;
+        }
+      }
+
+      .imgCarrito {
+        .icon {
+          width: 40px;
+          height: 47px;
+          margin: 0px 8px;
+        }
+      }
+
+      .modal {
+        position: fixed;
+        right: 6px;
+        top: 10px;
+        width: 97%;
+        border-radius: 10px;
+        padding: 5px;
+        font-family: $fontTexto;
+        transform: translateX(100%);
+        transition-duration: 0.8s;
+
+        .carritoProductos {
+          width: 100%;
+          height: 400px;
+          overflow: scroll;
+          .products {
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+            grid-template-rows: 90px;
+            margin: 5px;
+            border-bottom: 1px solid black;
+            padding: 10px;
+            font-size: 18px;
+            img {
+              width: 100%;
+              height: 100%;
+              margin: 0px;
+              padding: 0px;
+            }
+            .product {
+              display: flex;
+              flex-flow: column nowrap;
+              justify-content: center;
+              align-items: center;
+              padding: 10px;
+              .infoProduct {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: center;
+
+                .descriptionProduct {
+                  display: flex;
+                  flex-flow: column nowrap;
+                  justify-content: center;
+                  align-items: center;
+
+                  .nombre {
+                    padding: 5px;
+                  }
+
+                  .precioProductModal {
+                    padding: 10px;
+                  }
+
+                  .btnAñadir {
+                    width: 15px;
+                    border-radius: 5px;
+                    background-color: $colorPrimario;
+                    color: white;
+                  }
                 }
-                .descriptionProductPayCartContainer{
+              }
+
+              .cantProduct {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: center;
+
+                .spanDelete {
+                  width: 80px;
+                  margin: 0px 0px 0px 14px;
+
+                  .deleteProduct {
+                    width: 100%;
+                    height: 20px;
+                    background-color: $colorPrimario;
+                    color: white;
+
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .divTotal {
+          margin: 10px;
+          text-align: center;
+
+          .total {
+            font-family: $fontPrimaria;
+            font-weight: bold;
+            font-size: 18px;
+          }
+        }
+
+        .divPagar {
+          width: 100%;
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: center;
+          align-items: center;
+
+          .linkPay {
+            text-decoration: none;
+            color: white;
+
+            .btnPagar {
+              margin: 25px 0px 10px 100px;
+              width: 100px;
+              height: 30px;
+              border-radius: 5px;
+              margin: 0px 10px;
+              background-color: $colorPrimario;
+              color: white;
+
+            }
+          }
+
+        }
+
+      }
+
+      .modalVisible {
+        position: absolute;
+        transform: translateX(0);
+        transition-duration: 0.8s;
+        background-color: rgba(255, 255, 255, 0.952);
+        font-family: $fontTexto;
+        font-weight: 700;
+      }
+
+      .closeBtn {
+        width: 24px;
+        position: absolute;
+        top: 2px;
+        right: 10px;
+        background-color: black;
+        padding: 2px;
+        border-radius: 50%;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+        margin-bottom: 30px;
+        &:hover {
+          background-color: $colorHover;
+        }
+      }
+    }
+  }
+
+  .btnLink-container {
+    .icon {
+      width: 40px;
+      height: 40px;
+      margin: 0px 8px;
+    }
+  }
+}
+
+
+main {
+  .section-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(1, 5fr);
+      grid-auto-rows: 1;
+      gap: 8px;
+
+      .card {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 350px;
+        height: 280px;
+        padding: 2px;
+        text-decoration: none;
+        border-radius: 10px;
+        font-family: $fontTexto;
+        color: white;
+        background-color: $colorPrimario;
+        box-shadow: 0 2px 10px black;
+
+        .detailProducto {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: start;
+          align-items: start;
+          width: 100%;
+          height: 100%;
+          font-family: $fontTexto;
+
+          .card__image {
+            width: 50%;
+            height: 100%;
+
+            .card__heading {
+              width: 300px;
+              font-size: 30px;
+              text-align: start;
+              margin: 8px;
+            }
+
+            .imagenProductos {
+              padding: 10px;
+              background-color: rgb(201, 200, 200);
+              width: 150px;
+              height: 150px;
+              margin: 8px;
+              border-radius: 4px;
+            }
+          }
+
+          .card__content {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: start;
+            align-items: start;
+            width: 200px;
+            height: 80%;
+            margin-top: 50px;
+
+            .card__description {
+              font-size: 20px;
+
+              .productDescription {
+                margin-bottom: 5px;
+                font-size: 14px;
+                font-family: $fontTexto;
+                font-weight: 100;
+              }
+
+              .precio {
+                font-size: 24px;
+                font-family: $fontPrimaria;
+                font-weight: 600;
+              }
+            }
+          }
+        }
+
+        button {
+          width: 100px;
+          height: 30px;
+          border-radius: 8px;
+          margin: 15px;
+          padding: 0px;
+          font-family: $fontTexto;
+        }
+      }
+    }
+  }
+
+  #section-alta {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      font-size: 42px;
+      font-family: $fontPrimaria;
+    }
+
+    .formAlta {
+      width: 600px;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid black;
+      padding: 8px;
+      border-radius: 8px;
+
+      div {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+
+        label {
+          font-weight: 600;
+          font-size: 16px;
+          margin-bottom: 10px;
+          font-family: $fontPrimaria;
+        }
+
+        input,
+        textarea {
+          width: 100%;
+          height: 30px;
+          margin-bottom: 10px;
+          text-align: center;
+          font-family: $fontPrimaria;
+          font-size: 16px;
+          padding: 8px;
+          overflow: hidden;
+          border-radius: 8px;
+
+          &:focus {
+            background-color: $colorPrimario;
+            color: white;
+          }
+        }
+      }
+
+      button {
+        width: 150px;
+        height: 30px;
+        border-radius: 8px;
+        margin-top: 12px;
+        background-color: $colorPrimario;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        font-size: 16px;
+        font-family: $fontPrimaria;
+      }
+    }
+  }
+
+  #contactoSection {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      font-size: 42px;
+      font-family: $fontPrimaria;
+    }
+
+    .formContacto {
+      width: 600px;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid black;
+      padding: 8px;
+      border-radius: 8px;
+
+      div {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+
+        label {
+          font-weight: 600;
+          font-size: 16px;
+          margin-bottom: 10px;
+          font-family: $fontPrimaria;
+        }
+
+        input,
+        textarea {
+          width: 100%;
+          height: 30px;
+          margin-bottom: 10px;
+          text-align: center;
+          font-family: $fontPrimaria;
+          font-size: 16px;
+          padding: 8px;
+          overflow: hidden;
+          border-radius: 8px;
+
+          &:focus {
+            background-color: $colorPrimario;
+            color: white;
+          }
+        }
+      }
+
+      button {
+        width: 150px;
+        height: 30px;
+        border-radius: 8px;
+        margin-top: 12px;
+        background-color: $colorPrimario;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        font-size: 16px;
+        font-family: $fontPrimaria;
+      }
+    }
+  }
+
+  #sectionPayCart {
+    .tittlePayCart {
+      font-family: $fontTexto;
+      color: $colorPrimario;
+      margin-bottom: 10px;
+    }
+
+    .containerPayCart {
+
+      .productPayCart {
+        margin-left: 10px;
+        padding: 0px;
+        margin-top: 0px;
+
+        .productNamePayCart {
+          font-family: $fontTexto;
+          margin: 0px;
+          padding: 0px;
+        }
+
+        .descriptionProductPayCartContainer {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          border-bottom: 1px solid black;
+          padding: 5px;
+
+          .imageProductPayCart {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            border-radius: 5px;
+          }
+
+          .descriptionProductPayCart {
+            display: flex;
+            flex-flow: column nowrap;
+            margin: 10px;
+
+            p {
+              margin: 5px;
+              padding: 0px;
+            }
+          }
+
+        }
+
+      }
+
+    }
+
+    .payContainerCartPay {
+      width: 100%;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+
+      .spanTotalCartPay {
+        font-family: $fontPrimaria;
+        color: $colorPrimario;
+        margin-top: 10px;
+        font-weight: 600;
+      }
+
+      .linkBtnPay {
+        width: 150px;
+        height: 30px;
+
+        .btnPayCartPay {
+          margin-top: 5px;
+          width: 100%;
+          height: 100%;
+          background-color: $colorPrimario;
+          color: white;
+          border-radius: 5px;
+        }
+      }
+
+    }
+  }
+}
+
+
+@media (min-width: 820px) and (max-width: 999px) {
+  header {
+    margin-bottom: 20px;
+
+    .headerIzquierda {
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+
+      .nav-bar {
+        width: 280px;
+        margin-left: 20px;
+
+        .nav-list {
+          .nav-item {
+            margin-left: 5px;
+            padding: 0px 5px 0px 2px;
+
+            .nav-link {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+
+    .headerDerecha .btnCarrito .cuadroNotificacion {
+      top: 10px;
+    }
+
+    .headerDerecha .btnCarrito .modal {
+      transform: translateX(100%);
+      transition-duration: 0.6s;
+    }
+
+    .headerDerecha .btnCarrito .modalVisible {
+      transform: translateX(0);
+      transition-duration: 0.6s;
+    }
+
+  }
+
+  main .section-cards .cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 5fr);
+    grid-auto-rows: 1;
+    gap: 26px;
+  }
+}
+
+
+
+@media (min-width:1000px) and (max-width: 1800px) {
+
+  header {
+    .headerIzquierda {
+      flex-flow: row nowrap;
+      align-items: baseline;
+
+      .title {
+        width: auto;
+
+        h1 {
+          color: $colorPrimario;
+          font-weight: 900;
+          font-size: 50px;
+          font-family: $fontPrimaria ;
+        }
+      }
+
+      .nav-bar {
+        margin: 0px 0px 0px 15px;
+        width: 300px;
+        height: 70px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+
+        .nav-list {
+          width: 100px;
+
+          .nav-item {
+            width: 90px;
+            list-style: none;
+            border: 2px solid black;
+            margin: 0px 10px;
+            border-radius: 5px;
+
+            &:hover {
+              background-color: $colorPrimario;
+            }
+
+            .nav-link {
+              width: 100%;
+              height: 100%;
+              text-decoration: none;
+              text-decoration-color: none;
+              color: black;
+              text-align: center;
+              padding: 3px;
+              font-size: 18px;
+              font-family: $fontTexto;
+
+              &:hover {
+                color: white;
+                font-family: $fontTexto;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .headerDerecha {
+      .btnCarrito {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+
+        .cuadroNotificacion {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 27px;
+          height: 27px;
+          background-color: #369743;
+          padding: 2px;
+          top: 24px;
+          right: 40px;
+          border-radius: 50%;
+
+          #notificaciones {
+            font-size: 16px;
+            text-decoration: none;
+            font-family: $fontTexto;
+            text-decoration: none;
+            color: white;
+          }
+        }
+
+        .imgCarrito {
+          .icon {
+            width: 47px;
+            height: 47px;
+            margin: 0px 8px;
+          }
+        }
+
+        .modal {
+          position: fixed;
+          right: 6px;
+          top: 10px;
+          width: 42%;
+          height: 90%;
+          border-radius: 10px;
+          padding: 5px;
+          font-family: $fontTexto;
+          transform: translateX(100%);
+          transition-duration: 0.8s;
+
+          .carritoProductos {
+            width: 100%;
+            height: 80%;
+            overflow: auto;
+
+            .products {
+              display: grid;
+              grid-template-columns: 1fr 8fr;
+              grid-template-rows: 0.5fr;
+              margin: 5px;
+              border-bottom: 1px solid black;
+              padding: 10px;
+              font-size: 18px;
+
+              .imagen {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 120px;
+                height: 120px;
+                border: 1px solid black;
+                padding: 5px;
+                background-color: $fondoClaro;
+
+                img {
+                  width: 100px;
+                  height: 100px;
+                }
+              }
+
+              .product {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+                font-size: 18px;
+
+                .infoProduct {
+                  display: flex;
+                  flex-flow: column nowrap;
+                  justify-content: center;
+                  align-items: center;
+
+                  .descriptionProduct {
                     display: flex;
-                    flex-flow: row nowrap;
+                    flex-flow: column nowrap;
                     justify-content: center;
                     align-items: center;
-                    width: 100%;
-                    border-bottom: 1px solid black;
-                    padding: 5px;
-                    .imageProductPayCart{
-                        width: 100px;
-                        height: 100px;
-                        border: 1px solid black;
-                        border-radius: 5px;
-                    }
-                    .descriptionProductPayCart{
-                        display: flex;
-                        flex-flow: column nowrap;
-                        margin: 10px;
-                        
-                        p{
-                            margin: 5px;
-                            padding: 0px;
-                        }
+
+                    .nombre {
+                      padding: 5px;
                     }
 
+                    .precioProductModal {
+                      padding: 10px;
+                    }
+
+                    .btnAñadir {
+                      width: 15px;
+                      border-radius: 5px;
+                      background-color: $colorPrimario;
+                      color: white;
+                      cursor: pointer;
+
+                      &:hover {
+                        background-color: $colorHover;
+                      }
+                    }
+                  }
                 }
-                
+
+                .cantProduct {
+                  display: flex;
+                  flex-flow: column nowrap;
+                  justify-content: center;
+                  align-items: center;
+
+                  .spanDelete {
+                    width: auto;
+                    height: auto;
+                    margin: 14px;
+
+                    .deleteProduct {
+                      width: 150px;
+                      height: 30px;
+                      background-color: $colorPrimario;
+                      color: white;
+                      cursor: pointer;
+                      border-radius: 5px;
+                      text-align: center;
+                      font-size: 16px;
+
+                      &:hover {
+                        background-color: $colorHover;
+                      }
+                    }
+                  }
+                }
+              }
             }
-           
-        }
-        .payContainerCartPay{
+          }
+
+          .divTotal {
+            margin: 10px;
+            text-align: center;
+
+            .total {
+              font-family: $fontPrimaria;
+              font-weight: bold;
+              font-size: 18px;
+            }
+          }
+
+          .divPagar {
             width: 100%;
             display: flex;
-            flex-flow: column nowrap;
+            flex-flow: row nowrap;
             justify-content: center;
             align-items: center;
-            .spanTotalCartPay{
-                font-family: $fontPrimaria;
-                color: $colorPrimario;
-                margin-top: 10px;
-                font-weight: 600;
+
+            .btnPagar {
+              margin: 25px 0px 10px 100px;
+              width: 150px;
+              height: 30px;
+              font-size: 20px;
+              border-radius: 5px;
+              margin: 0px 10px;
+              background-color: $colorPrimario;
+              color: white;
+              cursor: pointer;
+
+              &:hover {
+                background-color: $colorHover;
+              }
             }
-            .linkBtnPay{
-                width: 150px;
-                height: 30px;
-                .btnPayCartPay{
-                    margin-top: 5px;
-                    width: 100%;
-                    height: 100%;
-                    background-color: $colorPrimario;
-                    color: white;
-                    border-radius: 5px;
-                }
-            }
-
-        }
-    }
-}
-
-
-@media (min-width: 820px) and (max-width: 999px){          
-    header{
-        margin-bottom: 20px;
-        .headerIzquierda{
-        flex-flow: row nowrap;
-        align-items: center;
-        justify-content: center;
-            .nav-bar{
-                width: 280px;
-                margin-left: 20px;
-                .nav-list{
-                    .nav-item{
-                        margin-left: 5px;
-                        padding: 0px 5px 0px 2px;
-                        .nav-link{
-                            font-size: 16px ;
-                        }
-                    }
-                }
-            }    
+          }
         }
 
-        .headerDerecha .btnCarrito .cuadroNotificacion{
-            top: 10px;
+        .modalVisible {
+          transform: translateX(0);
+          transition-duration: 0.8s;
+          background-color: rgba(255, 255, 255, 0.952);
+          font-family: $fontTexto;
+          font-weight: 700;
         }
 
-        .headerDerecha .btnCarrito .modal{
-            transform: translateX(100%);
-            transition-duration: 0.6s;
-        }  
-        
-        .headerDerecha .btnCarrito .modalVisible{
-            transform: translateX(0);
-            transition-duration: 0.6s;
+        .closeBtn {
+          width: 24px;
+          position: absolute;
+          top: 2px;
+          right: 10px;
+          background-color: black;
+          padding: 2px;
+          border-radius: 50%;
+          text-align: center;
+          color: white;
+          cursor: pointer;
+          margin-bottom: 30px;
+
+          &:hover {
+            background-color: $colorHover;
+          }
         }
-        
+      }
     }
 
-    main .section-cards .cards-container{
+    .btnLink-container {
+      .icon {
+        width: 40px;
+        height: 40px;
+        margin: 0px 8px;
+      }
+    }
+  }
+
+  main {
+    .section-cards {
+      .cards-container {
         display: grid;
-        grid-template-columns: repeat(2, 5fr);
-        grid-auto-rows: 1;
-        gap: 26px;      
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 1fr;
+        gap: 60px;
+
+        .card {
+          width: 400px;
+          transition: 0.5s;
+          transition-timing-function: linear;
+          font-family: $fontTexto;
+          font-size: 12px;
+          color: white;
+          background-color: $colorPrimario;
+          box-shadow: 0 2px 10px black;
+          cursor: default;
+
+          &:hover {
+            background-color: rgb(212, 212, 212);
+            box-shadow: 3px 3px 20px $colorPrimario;
+            font-weight: bold;
+            color: black;
+            font-family: $fontTexto;
+          }
+
+          &:hover .imagenProductos {
+            box-shadow: 3px 3px 30px $colorPrimario;
+            transition: 0.5s;
+            transition-timing-function: linear;
+            background-color: $colorPrimario !important;
+          }
+
+          &:hover button {
+            color: white;
+            background-color: $colorPrimario;
+            transition: 0.5s;
+            transition-timing-function: linear;
+            font-family: $fontPrimaria;
+            cursor: pointer;
+          }
+
+          .detailProducto {
+            .card__content .card__description .productDescription {
+              font-size: 16px;
+            }
+
+            .precio {
+              font-size: 30px;
+            }
+          }
+
+          button {
+            width: 150px;
+            height: 45px;
+            padding: 4px;
+            font-family: $fontPrimaria;
+          }
+        }
+      }
     }
-}
-
-
-
-@media (min-width:1000px) and (max-width: 1800px){
-    
-    header{ 
-        .headerIzquierda{
+    #sectionPayCart {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      .tittlePayCart {
+        width: 100%;
+        padding: 8px;
+        border-radius: 4px;
+        color: white !important;
+        background-color: $colorPrimario;
+        font-family: $fontTexto;
+      }
+      .containerPayCart{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        width: 90%;
+        .productPayCart{
+          .descriptionProductPayCartContainer{
+            width: 100%;
+            display: flex;
             flex-flow: row nowrap;
-            align-items: baseline;
-            .title{
-                width: auto;
-                h1{
-                    color: $colorPrimario;
-                    font-weight: 900;
-                    font-size: 50px;
-                    font-family:$fontPrimaria ;
-                }
-            }
-            .nav-bar{
-                margin: 0px 0px 0px 15px;
-                width: 300px;
-                height: 70px;
-                display: flex;
-                flex-flow: row nowrap;
-                justify-content: space-around;
-                align-items: center;
-                .nav-list{
-                    width: 100px;
-                    .nav-item{
-                        width: 90px;
-                        list-style: none;
-                        border: 2px solid black;
-                        margin: 0px 10px;
-                        border-radius: 5px;
-                        &:hover{
-                            background-color: $colorPrimario;
-                        }
-                        .nav-link{
-                            width: 100%;
-                            height: 100%;
-                            text-decoration: none;
-                            text-decoration-color: none;
-                            color: black;
-                            text-align: center;
-                            padding: 3px;
-                            font-size: 18px;
-                            font-family:$fontTexto;
-                            &:hover{
-                                color: white;
-                                font-family:$fontTexto;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        .headerDerecha{
-            .btnCarrito{
-                display: flex;
-                flex-flow: row nowrap;
-                justify-content: center;
-                align-items: center;
-                .cuadroNotificacion{
-                    position: absolute;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 27px;
-                    height: 27px;
-                    background-color:#369743;
-                    padding: 2px;
-                    top: 24px;
-                    right: 40px;
-                    border-radius: 50%;
-                    #notificaciones{
-                        font-size: 16px;
-                        text-decoration: none;
-                        font-family: $fontTexto;
-                        text-decoration: none;
-                        color: white;
-                    }
-                }
-                .imgCarrito{
-                    .icon{
-                        width: 47px;
-                        height: 47px;
-                        margin: 0px 8px;
-                    }
-                }
-                .modal{
-                position: fixed;
-                right: 6px;
-                top: 10px;
-                width: 42%;
-                height: 90%;
-                border-radius: 10px;
-                padding: 5px;
-                font-family: $fontTexto;
-                transform: translateX(100%);
-                transition-duration: 0.8s;
-                .carritoProductos{
-                    width: 100%;
-                    height: 80%;
-                    overflow: auto;
-                    .products{
-                        display: grid;
-                        grid-template-columns: 1fr 8fr;
-                        grid-template-rows: 0.5fr;
-                        margin: 5px;
-                        border-bottom: 1px solid black;
-                        padding: 10px;
-                        font-size: 18px;
-                        .imagen{
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            width: 120px;
-                            height: 120px;
-                            border: 1px solid black;
-                            padding: 5px;
-                            background-color: $fondoClaro;
-                            img{
-                                width: 100px;
-                                height: 100px;
-                            }
-                        }
-                        .product{
-                            display: flex;
-                            flex-flow: column nowrap;
-                            justify-content: center;
-                            align-items: center;
-                            padding: 10px;
-                            font-size: 18px;
-                            .infoProduct{
-                                display: flex;
-                                flex-flow: column nowrap;
-                                justify-content: center;
-                                align-items: center;
-                                .descriptionProduct{
-                                    display: flex;
-                                    flex-flow: column nowrap;
-                                    justify-content: center;
-                                    align-items: center;
-                                    .nombre{
-                                        padding: 5px;
-                                    }
-                                    .precioProductModal{
-                                        padding: 10px;
-                                    }
-                                    .btnAñadir{
-                                        width: 15px;
-                                        border-radius: 5px;
-                                        background-color: $colorPrimario;
-                                        color: white;
-                                        cursor: pointer;
-                                        &:hover{
-                                            background-color: $colorHover;
-                                        }
-                                    }
-                                }
-                            }
-                            .cantProduct{
-                                display: flex;
-                                flex-flow: column nowrap;
-                                justify-content: center;
-                                align-items: center;
-                                .spanDelete{
-                                    width: auto;
-                                    height: auto;
-                                    margin: 14px;
-                                    .deleteProduct{
-                                        width: 150px;
-                                        height: 30px;
-                                        background-color: $colorPrimario;
-                                        color: white;
-                                        cursor:pointer;
-                                        border-radius: 5px;
-                                        text-align: center;
-                                        font-size: 16px;
-                                        &:hover{
-                                            background-color: $colorHover;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                .divTotal{
-                    margin: 10px;
-                    text-align: center;
-                    .total{
-                        font-family: $fontPrimaria;
-                        font-weight: bold;
-                        font-size: 18px;
-                    }
-                }
-                .divPagar{
-                    width: 100%;
-                    display: flex;
-                    flex-flow: row nowrap;
-                    justify-content: center;
-                    align-items: center;
-                    .btnPagar{
-                        margin: 25px 0px 10px 100px;
-                        width: 150px;
-                        height: 30px;
-                        font-size: 20px;
-                        border-radius: 5px;
-                        margin: 0px 10px;
-                        background-color: $colorPrimario;
-                        color: white;
-                        cursor: pointer;
-                        &:hover{
-                            background-color: $colorHover;
-                        }
-                    }
+            justify-content: space-between;
 
-                }
-                
+            .descriptionProductPayCart{
+              width: 80%;
+              display: flex;
+              flex-flow: row nowrap;
+              justify-content: space-around;
+              span{
+                width: 200px;
+                font-family: $fontPrimaria;
+                font-size: 16px;
+                font-weight: 500;
+              }
             }
-            .modalVisible{
-                transform: translateX(0);
-                transition-duration: 0.8s;
-                background-color: rgba(255, 255, 255, 0.952);
-                font-family: $fontTexto;
-                font-weight: 700;
-                }
-                .closeBtn{
-                    width: 24px;
-                    position: absolute;
-                    top: 2px;
-                    right: 10px;
-                    background-color: black;
-                    padding: 2px;
-                    border-radius: 50%;
-                    text-align: center;
-                    color: white;
-                    cursor: pointer;
-                    margin-bottom: 30px;
-                    &:hover{
-                        background-color: $colorHover;
-                    }
-                }
-            }
+          }
         }
-        .btnLink-container{
-            .icon{
-                width: 40px;
-                height: 40px;
-                margin: 0px 8px;
-            }
+      }
+      .payContainerCartPay{
+        width: 100%;
+        height: 100px;
+        .spanTotalCartPay{
+          margin: 10px;
         }
+        .btnPayCartPay{
+          font-size: 18px;
+          &:hover{
+            color: white;
+            background-color: $colorHover;
+            cursor: pointer;
+          }
+        }
+      }
     }
-
-    main{
-        .section-cards{
-            .cards-container{
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                grid-auto-rows: 1fr;
-                gap: 60px;
-                .card{
-                    width: 400px;
-                    transition: 0.5s;
-                    transition-timing-function: linear;
-                    font-family: $fontTexto;
-                    font-size: 12px;
-                    color: white;
-                    background-color: $colorPrimario;
-                    box-shadow: 0 2px 10px black;
-                    cursor:default;
-                    &:hover{
-                        background-color: rgb(212, 212, 212) ;
-                        box-shadow: 3px 3px 20px $colorPrimario;
-                        font-weight: bold;
-                        color: black;
-                        font-family: $fontTexto;
-                    }
-                    &:hover .imagenProductos{
-                        box-shadow: 3px 3px 30px $colorPrimario;
-                        transition: 0.5s;
-                        transition-timing-function: linear;
-                        background-color: $colorPrimario !important;
-                    }
-                    &:hover button{
-                        color: white;
-                        font-family: $fontTexto;
-                        background-color: $colorPrimario;
-                        transition: 0.5s;
-                        transition-timing-function: linear;
-                        cursor: pointer;
-                    }
-                    .detailProducto{
-                        .card__content .card__description .productDescription{
-                            font-size: 16px;
-                        }
-                        .precio{
-                            font-size: 30px;
-                        }
-                    }
-                    button{
-                        width: 150px;
-                        height: 45px;
-                        padding: 4px;
-
-                    }
-                }
-            }
-        }
-    }
+  }
 }
