@@ -4,7 +4,7 @@ import {añadirEventosForm} from "./modules/events/form/eventosForm.js"
 import "./modules/cart/eventoModal.js"
 import "./modules/cart/mainCart.js"
 import { required } from "./modules/events/form/eventosForm.js"
-import {deleteStorage} from './modules/events/cart/eventosCart.js'
+import {deleteStorage,addCartBD } from './modules/events/cart/eventosCart.js'
 
 addRoute("/", async () => {
     const response = await fetch("http://localhost:8080/api/productos")
@@ -37,5 +37,6 @@ addRoute("/contacto", () => {
 addRoute("/pagar", ()=>{
     const cart = localStorage.cart ? JSON.parse(localStorage.cart) : []
     document.querySelector('main').innerHTML = pagarTemplate({cart});
+    addCartBD()
     deleteStorage();
 })

@@ -1,18 +1,17 @@
-import { ObjectId } from "mongodb";
-import mongoose, {ObjectId} from "mongoose";
+import mongoose from "mongoose";
 
 const cartSchema = new mongoose.Schema({
     items: [{
-        productId: {type: ObjectId, required:true},
+        productId: {type: Number, required:true},
         quantity: {type: Number, default: 1, min: 0},
         
     }],
-    userId: ObjectId,
+    
     state:{type:String, default: 'active', enum:['active', 'inactive', 'finish']},
 
     total: Number
 });
 
-const productCart = mongoose.model('Carrito', cartSchema);
+const Cart = mongoose.model('Cart', cartSchema);
 
-export default productCart;
+export default Cart;

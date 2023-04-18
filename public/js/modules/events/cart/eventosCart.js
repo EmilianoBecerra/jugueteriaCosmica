@@ -1,19 +1,42 @@
-export const deleteStorage = ()=> {
-    const linkPay = document.querySelector('.linkBtnPay')
-    linkPay.addEventListener('click', ()=>{
-        localStorage.removeItem('cart')
+export const addCartBD = () =>{
+
+    const button = document.querySelector('.btnPayCartPay')
+
+    button.addEventListener('click', async (ev)=>{
+        const localStorageCart = JSON.parse(localStorage.cart)
+       
+        const totalCart = localStorageCart.reduce((acc, producto)=>{
+            return acc+producto.subtotal
+        },0) 
+
+
+        const body = {
+            items: localStorageCart.map((product)=>{
+                return {
+                    productId: product.id,
+                    quantity: product.cantidad
+                }
+            }),
+            state: 'active',
+            total: totalCart
+        }
+
+        await fetch('http://localhost:8080/cart/pagar',{
+            method: 'POST',
+            body:JSON.stringify(body),
+            headers:{
+            'Content-Type': 'application/json'
+            }
+        })
+        
     })
 }
 
 
-export const addCartBD = () =>{
-    const button = document.querySelector('.btnPayCartPay')
-    button.addEventListener("submit", (ev)=>{
-        ev.preventDefault()
-        const cart = JSON.parse(localStorage.cart)
 
-        const body = {
-
-        }
+export const deleteStorage = ()=> {
+    const linkPay = document.querySelector('.linkBtnPay')
+    linkPay.addEventListener('click', ()=>{
+        localStorage.removeItem('cart')
     })
 }

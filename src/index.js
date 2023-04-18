@@ -3,7 +3,7 @@ import express from "express";
 import {create} from "express-handlebars";
 import mongoose from "mongoose";
 import PrincipalRouter from "./Routers/Router.js";
-import cartMiddleware from './middlewares/cart.js';
+//import cartMiddleware from './middlewares/cart.js';
 dotenv.config();
 
 
@@ -31,7 +31,6 @@ app.set("views", "./src/views");
 
 app.use(express.static(process.env.PUBLIC_ROUTE));
 
-app.use(cartMiddleware)
 
 app.use(express.json());
 
