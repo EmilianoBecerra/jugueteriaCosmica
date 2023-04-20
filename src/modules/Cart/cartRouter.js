@@ -8,10 +8,6 @@ const CartRouter = Router()
 CartRouter.post("/pagar", CartController.addCart)
 
 
-
-
-
-
 export default CartRouter
 
 

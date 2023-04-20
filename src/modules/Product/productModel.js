@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const ProdcutSchema = new mongoose.Schema({
+const ProductSchema = new mongoose.Schema({
     id: {type: Number, unique:true, required:true, },
     nombre: {type: String, required:true},
     precio: {type: Number, required:true, min:200},
@@ -11,6 +11,6 @@ const ProdcutSchema = new mongoose.Schema({
     imagen: String 
 })
 
-const Producto = mongoose.model("Producto", ProdcutSchema); 
+const Producto = mongoose.model("Producto", ProductSchema); 
 
 export default Producto; 

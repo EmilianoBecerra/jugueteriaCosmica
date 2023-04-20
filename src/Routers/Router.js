@@ -1,6 +1,6 @@
 import { Router } from "express";
 import ProductRouter from "../modules/Product/ProductoRouter.js"
-import CartRouter from "../modules/Cart/cartRouter.js";
+import CartRouter from '../modules/Cart/CartRouter.js';
 
 
 const PrincipalRouter = Router();

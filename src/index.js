@@ -3,13 +3,11 @@ import express from "express";
 import {create} from "express-handlebars";
 import mongoose from "mongoose";
 import PrincipalRouter from "./Routers/Router.js";
-//import cartMiddleware from './middlewares/cart.js';
 dotenv.config();
 
-
-
 mongoose.set('strictQuery', false);
-mongoose.connect(`mongodb+srv://EmilianobBootcamp:${process.env.DB_PASS}@emibootcamp.jgsjmxm.mongodb.net/ejercicioFase3?retryWrites=true&w=majority`,{
+
+mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_CLOUD}`,{
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -29,7 +27,7 @@ app.engine("hbs", hbs.engine);
 app.set("view engine", "hbs");
 app.set("views", "./src/views");
 
-app.use(express.static(process.env.PUBLIC_ROUTE));
+app.use(express.static("./public"));
 
 
 app.use(express.json());
@@ -43,4 +41,4 @@ app.get("*", (req,res)=>{
 
 
 
-app.listen(process.env.PORT_SERVER);
+app.listen(8080);

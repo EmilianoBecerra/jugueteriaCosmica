@@ -7,20 +7,15 @@ import { required } from "./modules/events/form/eventosForm.js"
 import {deleteStorage,addCartBD } from './modules/events/cart/eventosCart.js'
 
 addRoute("/", async () => {
-    const response = await fetch("http://localhost:8080/api/productos")
+    const response = await fetch('http://localhost:8080/api/productos')
     const productos = await response.json()
     document.querySelector("main").innerHTML = productosTemplate({productos})
 })
 
 addRoute("/productos", async () => {
-    const response = await fetch("http://localhost:8080/api/productos")
+    const response = await fetch('http://localhost:8080/api/productos')
     const productos = await response.json()
     document.querySelector("main").innerHTML = productosTemplate({productos})
-})
-
-addRoute("/login", ()=>{
-    document.querySelector("main").innerHTML = loginTemplate()
-    validacionLogin()
 })
 
 addRoute("/alta", () => {

@@ -6,6 +6,6 @@ export const addCart = async (req,res)=>{
         const productsCart = await CartModel.create(body)
         res.json(console.log(productsCart))
     } catch (e) {
-        console.log('Algo salió mal')
+        res.json(e)
     }
 }
