@@ -49,7 +49,7 @@ document.body.addEventListener("click", async ev=>{
         }
 
         else{
-            const response = await fetch('http://localhost:8080/api/productos/' + idProduct)
+            const response = await fetch(`${process.env.URL_PAGE}/api/productos/` + idProduct)
             const producto = await response.json()
             producto.cantidad = 1
             producto.subtotal = producto.precio
