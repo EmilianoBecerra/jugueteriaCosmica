@@ -31,7 +31,7 @@ Por dudas, consultas o mejoras, se pueden comunicar a emibecerra92@mailfence.com
 
 ## Ayuda
 
-Si le fue de utilidad cómo herramienta y disfrutó del proyecto. Me podría validar en [LinkedIn](www.linkedin.com/in/becerra-emiliano) .
+Si le fue de utilidad cómo herramienta y disfrutó del proyecto. Me podría validar en [LinkedIn](https://linkedin.com/in/becerra-emiliano) .
 
 Muchas gracias y que lo disfruten :)!
 
