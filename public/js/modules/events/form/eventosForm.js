@@ -124,7 +124,7 @@ export const añadirEventosForm = () => {
 
         const formData = new FormData(form)
 
-        await fetch(`"${process.env.URL_LOCAL}${process.env.PORT}/api/alta"`,{
+        await fetch("http://localhost:3000/api/alta",{
             method: "POST",
             body: formData     
         })

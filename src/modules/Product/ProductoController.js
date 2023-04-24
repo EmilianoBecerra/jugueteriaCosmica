@@ -37,10 +37,10 @@ export const addProduct = async (req,res)=>{
         "descripcion": req.body.descripcion,
         "imagen": req.file.filename
     }
-    const obectBody = body
+    const objectBody = body
 
     try{
-       const product = ProductModel.create(obectBody)
+       const product = ProductModel.create(objectBody)
         res.json(product || {})
     }
     catch(e){

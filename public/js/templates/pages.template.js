@@ -25,7 +25,7 @@ export const altaTemplate = Handlebars.compile(`
     <section id="section-alta">
         
         <h2>Crear Producto</h2>
-        <form id="form" action= "${process.env.URL_PAGE}/productos"  class="formAlta"  >
+        <form id="form" action= ""  class="formAlta"  >
             <div class="field" >
                 <label for="id">ID</label>
                 <input type="text" name="idNumber">
