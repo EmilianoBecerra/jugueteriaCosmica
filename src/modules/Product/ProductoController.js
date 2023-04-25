@@ -2,6 +2,7 @@ import ProductModel from "./productModel.js";
 
 export const getAll = async(req,res)=>{
     const match = req.query ?? {}
+    console.log(match)
     try{
         const products = await ProductModel.find(match)
         res.json(products || {});

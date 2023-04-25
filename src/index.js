@@ -7,7 +7,7 @@ dotenv.config();
 
 mongoose.set('strictQuery', false);
 
-mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_CLOUD}`,{
+mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_CLUSTER}.jgsjmxm.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`,{
     useNewUrlParser: true,
     useUnifiedTopology: true
 });

@@ -5,7 +5,7 @@ import { v4 as uuid } from 'uuid'
 const storage = multer.diskStorage({
     destination: (req, file, cb)=>{
         if( file.mimetype.includes('image') ){
-            cb(null, 'C:/EducacionIT/proyectoFase2_/public/img/productos')
+            cb(null, '../../public/img/productos')
         }
         else{
             cb(null, '../../public/img/other')
