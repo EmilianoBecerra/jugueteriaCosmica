@@ -88,7 +88,7 @@ export const añadirEventosForm = () => {
         }
         return errMsg;
     }
-    
+
     listenerReutilizable(form.nombre, regexNombre)
     listenerReutilizable(form.precio, regexPrecio)
     listenerReutilizable(form.stock, regexStock)
@@ -97,12 +97,25 @@ export const añadirEventosForm = () => {
     listenerReutilizable(form.descripcion, regexDescripcionCorta)
 
     form.addEventListener("submit", async (ev) => {
+        ev.preventDefault();
         const formData = new FormData(form);
+        try {
+            const res = await fetch("https://jugueteriacosmica-zcre.onrender.com/api/alta", {
+                method: "POST",
+                body: formData
+            });
 
-        await fetch("${process.env.APPROUTE}/api/alta", {
-            method: "POST",
-            body: formData,
-            enctype: "multipart/form-data"
-        })
+            if (!res.ok) {
+                const errorText = await res.text();
+                throw new Error(`Error ${res.status}: ${errorText}`);
+            }
+
+            const result = await res.json();
+            console.log("✅ Producto creado:", result);
+            alert("Producto subido correctamente.");
+        } catch (err) {
+            console.error("❌ Error al subir el producto:", err);
+            alert("Hubo un error al enviar el formulario. Revisá la consola.");
+        }
     })
 }
