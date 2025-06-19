@@ -21,7 +21,7 @@ export const addCartBD = () => {
             total: totalCart
         }
 
-        await fetch(`http://localhost:3000/cart/pagar`, {
+        await fetch(`${process.env.APPROUTE}/cart/pagar`, {
             method: 'POST',
             body: JSON.stringify(body),
             headers: {

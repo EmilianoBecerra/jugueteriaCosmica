@@ -11,7 +11,7 @@ addRoute("/", async () => {
 })
 
 addRoute("/productos", async () => {
-    const response = await fetch(`http://localhost:3000/api/productos`);
+    const response = await fetch(`${process.env.APPROUTE}/api/productos`);
     const productos = await response.json();
     document.querySelector("main").innerHTML = productosTemplate({ productos });
 })

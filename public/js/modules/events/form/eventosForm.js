@@ -99,7 +99,7 @@ export const añadirEventosForm = () => {
     form.addEventListener("submit", async (ev) => {
         const formData = new FormData(form);
 
-        await fetch("http://localhost:3000/api/alta", {
+        await fetch("${process.env.APPROUTE}/api/alta", {
             method: "POST",
             body: formData,
             enctype: "multipart/form-data"
