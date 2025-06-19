@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(PrincipalRouter);
 
 app.get(/(.*)/, (req, res) => {
-    res.render("index", { layout: false })
+    res.render("index", { layout: false, approot: process.env.APPROUTE })
 })
 
 app.listen(process.env.PORT || 3000);

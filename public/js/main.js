@@ -5,15 +5,15 @@ import "./modules/cart/eventoModal.js"
 import "./modules/cart/mainCart.js"
 import { required } from "./modules/events/form/eventosForm.js"
 import { deleteStorage, addCartBD } from './modules/events/cart/eventosCart.js'
-import * as dotenv from '../../dotenv';
-dotenv.config();
 
+
+const API_BASE_URL = window.APPROUTE;
 addRoute("/", async () => {
     document.querySelector("main").innerHTML = homeTemplate();
 })
 
 addRoute("/productos", async () => {
-    const response = await fetch(`${process.env.APPROUTE}/api/productos`);
+    const response = await fetch(`${API_BASE_URL}/api/productos`);
     const productos = await response.json();
     document.querySelector("main").innerHTML = productosTemplate({ productos });
 })
