@@ -8,12 +8,13 @@ import { deleteStorage, addCartBD } from './modules/events/cart/eventosCart.js'
 
 
 const API_BASE_URL = window.APPROUTE;
-addRoute("/", async () => {
+addRoute("/", () => {
     document.querySelector("main").innerHTML = homeTemplate();
 })
 
 addRoute("/productos", async () => {
-    const response = await fetch(`${API_BASE_URL}/api/productos`);
+    const response = await fetch(`https://jugueteriacosmica-zcre.onrender.com/api/productos`);
+    console.log(response);
     const productos = await response.json();
     document.querySelector("main").innerHTML = productosTemplate({ productos });
 })
