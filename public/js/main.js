@@ -5,16 +5,16 @@ import "./modules/cart/eventoModal.js"
 import "./modules/cart/mainCart.js"
 import { required } from "./modules/events/form/eventosForm.js"
 import { deleteStorage, addCartBD } from './modules/events/cart/eventosCart.js'
+import { carrousel } from "./modules/events/home/carrousel.js"
 
 
-const API_BASE_URL = window.APPROUTE;
 addRoute("/", () => {
     document.querySelector("main").innerHTML = homeTemplate();
+    carrousel();
 })
 
 addRoute("/productos", async () => {
     const response = await fetch(`https://jugueteriacosmica-zcre.onrender.com/api/productos`);
-    console.log(response);
     const productos = await response.json();
     document.querySelector("main").innerHTML = productosTemplate({ productos });
 })

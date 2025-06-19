@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jugueteria Cosmica</title>
+    <title>Juguetería Cósmica</title>
     <script src="./js/main.js" type="module" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <link rel="stylesheet" href="./css/main.css">
@@ -50,34 +50,13 @@
         </div>
     </header>
     <main>
-
+        
     </main>
     <footer>Desarollado por Emiliano Becerra</footer>
-    <script>
-        window.APPROUTE = "{{approot}}";
-    </script>
-    <script>
-        let imgs;
-        let locationO = "${process.env.APPROUTE}/";
 
-        window.addEventListener("locationchange", () => {
-            if (locationO !== location.href) {
-                clearInterval(imgs);
-            }
-            if (locationO === location.href) {
-                const img = ["/img/logo/jugueteria1.png", "/img/logo/jugueteria2.png", "/img/logo/jugueteria3.png", "/img/logo/cartel.png"];
-                let i = 0;
-                imgs = setInterval(() => {
-                    document.querySelector("#imgs").setAttribute("src", `${img[i % img.length]}`);
-                    i++;
-                }, 2000)
-            }
-        })
-    </script>
     <script type="module">
         history.pushState(null, null, {{ url }})
     </script>
-
 </body>
 
 </html>

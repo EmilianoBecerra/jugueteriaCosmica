@@ -49,7 +49,7 @@ document.body.addEventListener("click", async ev => {
         }
 
         else {
-            const response = await fetch(`${process.env.APPROUTE}/api/productos/` + idProduct)
+            const response = await fetch(`https://jugueteriacosmica-zcre.onrender.com/api/productos` + idProduct)
             const producto = await response.json()
             producto.cantidad = 1
             producto.subtotal = producto.precio

@@ -35,17 +35,17 @@ export const productosTemplate = Handlebars.compile(`
         <a class="card">
             <article class="detailProducto">
                 <div class="card__image">
-                    <h3 class="card__heading">{{this.nombre}}</h3>
                     <img src='./../../img/productos/{{this.imagen}}' class="imagenProductos" alt="">
                 </div>
                 <div class="card__content">
                     <div class="card__description">
+                        <p class="nombreProducto" >{{this.nombre}}</p>
                         <p class="productDescription">{{this.descripcion}}</p>
                         <span class="precio"> $ {{this.precio}}</span>
                     </div>
+                    <button type="button" idProduct="{{this.id}}" class="añadirAlCarrito" > Añadir + </button>
                 </div>
             </article>
-            <button type="button" idProduct="{{this.id}}" class="añadirAlCarrito" > Añadir + </button>
         </a>
         {{/each}}
     </div>
