@@ -5,6 +5,8 @@ import "./modules/cart/eventoModal.js"
 import "./modules/cart/mainCart.js"
 import { required } from "./modules/events/form/eventosForm.js"
 import { deleteStorage, addCartBD } from './modules/events/cart/eventosCart.js'
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 addRoute("/", async () => {
     document.querySelector("main").innerHTML = homeTemplate();
