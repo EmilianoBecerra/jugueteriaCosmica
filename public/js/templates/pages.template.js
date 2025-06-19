@@ -1,5 +1,35 @@
+export const homeTemplate = Handlebars.compile(`
+    <section id="section-home">
+        <div class="presentation">
+            <div class="eslogan">
+                <h2>Todo lo que buscas...</h2>
+                <h2 class="segundoEslogan">Todo está acá.</h2>
+            </div>
+            <div class="btn-products">
+                <a to="/productos"><button>Ver Productos</button></a>
+            </div>
+        </div>
+        <img id="imgs" src="/img/logo/cartel.png" alt="">
+        <article class="comentarios">
+            <div class="comentario-card">
+                <b>Comprador 1 </b>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum provident unde libero aliquid neque culpa ullam impedit quasi eligendi, maxime vitae, quidem hic praesentium eveniet. Nostrum veritatis optio dicta ipsum.</p>
+            </div>
+            <div class="comentario-card">
+                <b>Comprador 2 </b>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum provident unde libero aliquid neque culpa ullam impedit quasi eligendi, maxime vitae, quidem hic praesentium eveniet. Nostrum veritatis optio dicta ipsum.</p>
+            </div>
+            <div class="comentario-card">
+                <b>Comprador 3 </b>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum provident unde libero aliquid neque culpa ullam impedit quasi eligendi, maxime vitae, quidem hic praesentium eveniet. Nostrum veritatis optio dicta ipsum.</p>
+            </div>
+        </article>
+    </section>
+`)
+
+
 export const productosTemplate = Handlebars.compile(` 
-<section class="section-cards">
+<section id="section-cards">
     <div class="cards-container">
         {{#each productos}}
         <a class="card">
@@ -76,7 +106,7 @@ export const altaTemplate = Handlebars.compile(`
 `)
 
 export const contactoTemplate = Handlebars.compile(`
-    <section  id="contactoSection">
+    <section  id="section-contact">
 
         <h2> Contacto </h2>
         <form action="0" class="formContacto">

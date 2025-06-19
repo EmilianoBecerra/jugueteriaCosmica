@@ -1,69 +1,68 @@
-$colorPrimario: #05031f;
-$fontPrimaria: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-$fontTexto: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+
+$colorPrimario: #4f46cf;
+$fontPrimaria: "DM Serif Text", serif;
+$fontTexto: "DM Serif Text", serif;
 $colorHover: #17144d;
-$fondoClaro: rgb(201, 200, 200);
+$fondoClaro: rgb(236, 236, 236);
 
 * {
-  border: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+html {
+  height: 100%;
+  max-width: 100%;
+}
+
 body {
   background-color: $fondoClaro;
+  height: 100%;
 }
 
 header {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   width: 100%;
+  height: 8%;
+  padding: 5px;
 
   .headerIzquierda {
     display: flex;
     flex-flow: column nowrap;
     justify-content: start;
-    align-items: baseline;
 
     h1 {
       color: $colorPrimario;
-      padding: 2px;
       font-weight: 900;
-      font-size: 30px;
+      font-size: 2em;
       font-family: $fontPrimaria ;
-      margin: 0;
     }
 
     .nav-bar {
-      margin: 0;
-      padding: 0;
-      width: 200px;
-      height: 50px;
+      width: 100%;
 
       .nav-list {
         display: flex;
         flex-flow: row nowrap;
-        justify-content: center;
-        align-items: center;
+        justify-content: start;
 
         .nav-item {
           list-style: none;
-          border: 2px solid black;
-          margin: 0px 3px;
-          border-radius: 5px;
+          margin: 2px 26px 4px 4px;
 
           .nav-link {
             width: 100%;
             height: 100%;
             text-decoration: none;
-            text-decoration-color: none;
-            color: black;
+            color: $colorPrimario;
             text-align: center;
-            padding: 3px;
-            font-size: 12px;
+            font-size: 0.9em;
             font-family: $fontTexto;
           }
         }
@@ -83,36 +82,33 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 24px;
-        height: 24px;
+        width: 18px;
+        height: 18px;
         background-color: #369743;
-        padding: 2px;
-        top: 28px;
-        right: 40px;
+        top: 7px;
+        right: 22px;
         border-radius: 50%;
 
         #notificaciones {
-          font-size: 14px;
+          font-size: 0.9em;
           text-decoration: none;
           font-family: $fontTexto;
-          text-decoration: none;
           color: white;
         }
       }
 
       .imgCarrito {
         .icon {
-          width: 40px;
-          height: 47px;
-          margin: 0px 8px;
+          width: 30px;
+          height: 30px;
         }
       }
 
       .modal {
+        top: 52px;
         position: fixed;
-        right: 6px;
-        top: 10px;
-        width: 97%;
+        width: 98%;
+        min-height: 100%;
         border-radius: 10px;
         padding: 5px;
         font-family: $fontTexto;
@@ -121,8 +117,8 @@ header {
 
         .carritoProductos {
           width: 100%;
-          height: 400px;
           overflow: scroll;
+
           .products {
             display: grid;
             grid-template-columns: 1fr 4fr;
@@ -131,18 +127,19 @@ header {
             border-bottom: 1px solid black;
             padding: 10px;
             font-size: 18px;
+
             img {
               width: 100%;
               height: 100%;
-              margin: 0px;
-              padding: 0px;
             }
+
             .product {
               display: flex;
               flex-flow: column nowrap;
               justify-content: center;
               align-items: center;
               padding: 10px;
+
               .infoProduct {
                 display: flex;
                 flex-flow: column nowrap;
@@ -240,6 +237,8 @@ header {
         background-color: rgba(255, 255, 255, 0.952);
         font-family: $fontTexto;
         font-weight: 700;
+        top: 52px;
+        right: 4px;
       }
 
       .closeBtn {
@@ -247,32 +246,81 @@ header {
         position: absolute;
         top: 2px;
         right: 10px;
-        background-color: black;
+        background-color: $colorPrimario;
         padding: 2px;
         border-radius: 50%;
         text-align: center;
         color: white;
         cursor: pointer;
         margin-bottom: 30px;
-        &:hover {
-          background-color: $colorHover;
-        }
       }
-    }
-  }
-
-  .btnLink-container {
-    .icon {
-      width: 40px;
-      height: 40px;
-      margin: 0px 8px;
     }
   }
 }
 
 
 main {
-  .section-cards {
+  padding: 10px;
+
+  #section-home {
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+
+    .presentation {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .eslogan {
+      h2 {
+        margin-top: 5px;
+        color: $colorPrimario;
+      }
+
+      .segundoEslogan {
+        margin-left: 200px;
+      }
+    }
+
+    .btn-products {
+      margin: 10px 0px;
+      button {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: $colorPrimario;
+        color: white;
+        a {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    img{
+      height: 360px;
+      width: 360px;
+      border-radius: 5px;
+      border: 3px solid $colorPrimario;
+      margin-bottom: 20px;
+    }
+
+    .comentario-card {
+      margin-bottom: 10px;
+      border: 1px solid $colorPrimario;
+      padding: 5px;
+      border-radius: 5px;
+      background-color: #4f46cf2c;
+      p {
+        padding: 10px;
+      }
+    }
+  }
+
+  #section-cards {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -437,7 +485,7 @@ main {
     }
   }
 
-  #contactoSection {
+  #section-contact {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -589,6 +637,15 @@ main {
 
     }
   }
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  color: white;
+  background-color: $colorPrimario;
 }
 
 
@@ -993,11 +1050,13 @@ main {
         }
       }
     }
+
     #sectionPayCart {
       display: flex;
       flex-flow: column nowrap;
       justify-content: center;
       align-items: center;
+
       .tittlePayCart {
         width: 100%;
         padding: 8px;
@@ -1006,24 +1065,27 @@ main {
         background-color: $colorPrimario;
         font-family: $fontTexto;
       }
-      .containerPayCart{
+
+      .containerPayCart {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
         width: 90%;
-        .productPayCart{
-          .descriptionProductPayCartContainer{
+
+        .productPayCart {
+          .descriptionProductPayCartContainer {
             width: 100%;
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-between;
 
-            .descriptionProductPayCart{
+            .descriptionProductPayCart {
               width: 80%;
               display: flex;
               flex-flow: row nowrap;
               justify-content: space-around;
-              span{
+
+              span {
                 width: 200px;
                 font-family: $fontPrimaria;
                 font-size: 16px;
@@ -1033,15 +1095,19 @@ main {
           }
         }
       }
-      .payContainerCartPay{
+
+      .payContainerCartPay {
         width: 100%;
         height: 100px;
-        .spanTotalCartPay{
+
+        .spanTotalCartPay {
           margin: 10px;
         }
-        .btnPayCartPay{
+
+        .btnPayCartPay {
           font-size: 18px;
-          &:hover{
+
+          &:hover {
             color: white;
             background-color: $colorHover;
             cursor: pointer;

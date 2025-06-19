@@ -1,64 +1,62 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap");
 * {
-  border: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
+html {
+  height: 100%;
+  max-width: 100%;
+}
+
 body {
-  background-color: rgb(201, 200, 200);
+  background-color: rgb(236, 236, 236);
+  height: 100%;
 }
 
 header {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   width: 100%;
+  height: 8%;
+  padding: 5px;
 }
 header .headerIzquierda {
   display: flex;
   flex-flow: column nowrap;
   justify-content: start;
-  align-items: baseline;
 }
 header .headerIzquierda h1 {
-  color: #05031f;
-  padding: 2px;
+  color: #4f46cf;
   font-weight: 900;
-  font-size: 30px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  margin: 0;
+  font-size: 2em;
+  font-family: "DM Serif Text", serif;
 }
 header .headerIzquierda .nav-bar {
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  height: 50px;
+  width: 100%;
 }
 header .headerIzquierda .nav-bar .nav-list {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
 }
 header .headerIzquierda .nav-bar .nav-list .nav-item {
   list-style: none;
-  border: 2px solid black;
-  margin: 0px 3px;
-  border-radius: 5px;
+  margin: 2px 26px 4px 4px;
 }
 header .headerIzquierda .nav-bar .nav-list .nav-item .nav-link {
   width: 100%;
   height: 100%;
   text-decoration: none;
-  text-decoration-color: none;
-  color: black;
+  color: #4f46cf;
   text-align: center;
-  padding: 3px;
-  font-size: 12px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 0.9em;
+  font-family: "DM Serif Text", serif;
 }
 header .headerDerecha .btnCarrito {
   display: flex;
@@ -71,40 +69,36 @@ header .headerDerecha .btnCarrito .cuadroNotificacion {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
   background-color: #369743;
-  padding: 2px;
-  top: 28px;
-  right: 40px;
+  top: 7px;
+  right: 22px;
   border-radius: 50%;
 }
 header .headerDerecha .btnCarrito .cuadroNotificacion #notificaciones {
-  font-size: 14px;
+  font-size: 0.9em;
   text-decoration: none;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  text-decoration: none;
+  font-family: "DM Serif Text", serif;
   color: white;
 }
 header .headerDerecha .btnCarrito .imgCarrito .icon {
-  width: 40px;
-  height: 47px;
-  margin: 0px 8px;
+  width: 30px;
+  height: 30px;
 }
 header .headerDerecha .btnCarrito .modal {
+  top: 52px;
   position: fixed;
-  right: 6px;
-  top: 10px;
-  width: 97%;
+  width: 98%;
+  min-height: 100%;
   border-radius: 10px;
   padding: 5px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "DM Serif Text", serif;
   transform: translateX(100%);
   transition-duration: 0.8s;
 }
 header .headerDerecha .btnCarrito .modal .carritoProductos {
   width: 100%;
-  height: 400px;
   overflow: scroll;
 }
 header .headerDerecha .btnCarrito .modal .carritoProductos .products {
@@ -119,8 +113,6 @@ header .headerDerecha .btnCarrito .modal .carritoProductos .products {
 header .headerDerecha .btnCarrito .modal .carritoProductos .products img {
   width: 100%;
   height: 100%;
-  margin: 0px;
-  padding: 0px;
 }
 header .headerDerecha .btnCarrito .modal .carritoProductos .products .product {
   display: flex;
@@ -150,7 +142,7 @@ header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .i
 header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .infoProduct .descriptionProduct .btnAñadir {
   width: 15px;
   border-radius: 5px;
-  background-color: #05031f;
+  background-color: #4f46cf;
   color: white;
 }
 header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .cantProduct {
@@ -166,7 +158,7 @@ header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .c
 header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .cantProduct .spanDelete .deleteProduct {
   width: 100%;
   height: 20px;
-  background-color: #05031f;
+  background-color: #4f46cf;
   color: white;
 }
 header .headerDerecha .btnCarrito .modal .divTotal {
@@ -174,7 +166,7 @@ header .headerDerecha .btnCarrito .modal .divTotal {
   text-align: center;
 }
 header .headerDerecha .btnCarrito .modal .divTotal .total {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "DM Serif Text", serif;
   font-weight: bold;
   font-size: 18px;
 }
@@ -195,7 +187,7 @@ header .headerDerecha .btnCarrito .modal .divPagar .linkPay .btnPagar {
   height: 30px;
   border-radius: 5px;
   margin: 0px 10px;
-  background-color: #05031f;
+  background-color: #4f46cf;
   color: white;
 }
 header .headerDerecha .btnCarrito .modalVisible {
@@ -203,15 +195,17 @@ header .headerDerecha .btnCarrito .modalVisible {
   transform: translateX(0);
   transition-duration: 0.8s;
   background-color: rgba(255, 255, 255, 0.952);
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "DM Serif Text", serif;
   font-weight: 700;
+  top: 52px;
+  right: 4px;
 }
 header .headerDerecha .btnCarrito .closeBtn {
   width: 24px;
   position: absolute;
   top: 2px;
   right: 10px;
-  background-color: black;
+  background-color: #4f46cf;
   padding: 2px;
   border-radius: 50%;
   text-align: center;
@@ -219,27 +213,71 @@ header .headerDerecha .btnCarrito .closeBtn {
   cursor: pointer;
   margin-bottom: 30px;
 }
-header .headerDerecha .btnCarrito .closeBtn:hover {
-  background-color: #17144d;
-}
-header .btnLink-container .icon {
-  width: 40px;
-  height: 40px;
-  margin: 0px 8px;
-}
 
-main .section-cards {
+main {
+  padding: 10px;
+}
+main #section-home {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+main #section-home .presentation {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+main #section-home .eslogan h2 {
+  margin-top: 5px;
+  color: #4f46cf;
+}
+main #section-home .eslogan .segundoEslogan {
+  margin-left: 200px;
+}
+main #section-home .btn-products {
+  margin: 10px 0px;
+}
+main #section-home .btn-products button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #4f46cf;
+  color: white;
+}
+main #section-home .btn-products button a {
+  width: 100%;
+  height: 100%;
+}
+main #section-home img {
+  height: 360px;
+  width: 360px;
+  border-radius: 5px;
+  border: 3px solid #4f46cf;
+  margin-bottom: 20px;
+}
+main #section-home .comentario-card {
+  margin-bottom: 10px;
+  border: 1px solid #4f46cf;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgba(79, 70, 207, 0.1725490196);
+}
+main #section-home .comentario-card p {
+  padding: 10px;
+}
+main #section-cards {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-main .section-cards .cards-container {
+main #section-cards .cards-container {
   display: grid;
   grid-template-columns: repeat(1, 5fr);
   grid-auto-rows: 1;
   gap: 8px;
 }
-main .section-cards .cards-container .card {
+main #section-cards .cards-container .card {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -249,31 +287,31 @@ main .section-cards .cards-container .card {
   padding: 2px;
   text-decoration: none;
   border-radius: 10px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "DM Serif Text", serif;
   color: white;
-  background-color: #05031f;
+  background-color: #4f46cf;
   box-shadow: 0 2px 10px black;
 }
-main .section-cards .cards-container .card .detailProducto {
+main #section-cards .cards-container .card .detailProducto {
   display: flex;
   flex-flow: row nowrap;
   justify-content: start;
   align-items: start;
   width: 100%;
   height: 100%;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "DM Serif Text", serif;
 }
-main .section-cards .cards-container .card .detailProducto .card__image {
+main #section-cards .cards-container .card .detailProducto .card__image {
   width: 50%;
   height: 100%;
 }
-main .section-cards .cards-container .card .detailProducto .card__image .card__heading {
+main #section-cards .cards-container .card .detailProducto .card__image .card__heading {
   width: 300px;
   font-size: 30px;
   text-align: start;
   margin: 8px;
 }
-main .section-cards .cards-container .card .detailProducto .card__image .imagenProductos {
+main #section-cards .cards-container .card .detailProducto .card__image .imagenProductos {
   padding: 10px;
   background-color: rgb(201, 200, 200);
   width: 150px;
@@ -281,7 +319,7 @@ main .section-cards .cards-container .card .detailProducto .card__image .imagenP
   margin: 8px;
   border-radius: 4px;
 }
-main .section-cards .cards-container .card .detailProducto .card__content {
+main #section-cards .cards-container .card .detailProducto .card__content {
   display: flex;
   flex-flow: column nowrap;
   justify-content: start;
@@ -290,27 +328,27 @@ main .section-cards .cards-container .card .detailProducto .card__content {
   height: 80%;
   margin-top: 50px;
 }
-main .section-cards .cards-container .card .detailProducto .card__content .card__description {
+main #section-cards .cards-container .card .detailProducto .card__content .card__description {
   font-size: 20px;
 }
-main .section-cards .cards-container .card .detailProducto .card__content .card__description .productDescription {
+main #section-cards .cards-container .card .detailProducto .card__content .card__description .productDescription {
   margin-bottom: 5px;
   font-size: 14px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "DM Serif Text", serif;
   font-weight: 100;
 }
-main .section-cards .cards-container .card .detailProducto .card__content .card__description .precio {
+main #section-cards .cards-container .card .detailProducto .card__content .card__description .precio {
   font-size: 24px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "DM Serif Text", serif;
   font-weight: 600;
 }
-main .section-cards .cards-container .card button {
+main #section-cards .cards-container .card button {
   width: 100px;
   height: 30px;
   border-radius: 8px;
   margin: 15px;
   padding: 0px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "DM Serif Text", serif;
 }
 main #section-alta {
   display: flex;
@@ -320,7 +358,7 @@ main #section-alta {
 }
 main #section-alta h2 {
   font-size: 42px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "DM Serif Text", serif;
 }
 main #section-alta .formAlta {
   width: 600px;
@@ -343,7 +381,7 @@ main #section-alta .formAlta div label {
   font-weight: 600;
   font-size: 16px;
   margin-bottom: 10px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "DM Serif Text", serif;
 }
 main #section-alta .formAlta div input,
 main #section-alta .formAlta div textarea {
@@ -351,7 +389,7 @@ main #section-alta .formAlta div textarea {
   height: 30px;
   margin-bottom: 10px;
   text-align: center;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "DM Serif Text", serif;
   font-size: 16px;
   padding: 8px;
   overflow: hidden;
@@ -359,7 +397,7 @@ main #section-alta .formAlta div textarea {
 }
 main #section-alta .formAlta div input:focus,
 main #section-alta .formAlta div textarea:focus {
-  background-color: #05031f;
+  background-color: #4f46cf;
   color: white;
 }
 main #section-alta .formAlta button {
@@ -367,24 +405,24 @@ main #section-alta .formAlta button {
   height: 30px;
   border-radius: 8px;
   margin-top: 12px;
-  background-color: #05031f;
+  background-color: #4f46cf;
   color: white;
   text-decoration: none;
   text-align: center;
   font-size: 16px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "DM Serif Text", serif;
 }
-main #contactoSection {
+main #section-contact {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
 }
-main #contactoSection h2 {
+main #section-contact h2 {
   font-size: 42px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "DM Serif Text", serif;
 }
-main #contactoSection .formContacto {
+main #section-contact .formContacto {
   width: 600px;
   display: flex;
   flex-flow: column nowrap;
@@ -394,51 +432,51 @@ main #contactoSection .formContacto {
   padding: 8px;
   border-radius: 8px;
 }
-main #contactoSection .formContacto div {
+main #section-contact .formContacto div {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   width: 50%;
 }
-main #contactoSection .formContacto div label {
+main #section-contact .formContacto div label {
   font-weight: 600;
   font-size: 16px;
   margin-bottom: 10px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "DM Serif Text", serif;
 }
-main #contactoSection .formContacto div input,
-main #contactoSection .formContacto div textarea {
+main #section-contact .formContacto div input,
+main #section-contact .formContacto div textarea {
   width: 100%;
   height: 30px;
   margin-bottom: 10px;
   text-align: center;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "DM Serif Text", serif;
   font-size: 16px;
   padding: 8px;
   overflow: hidden;
   border-radius: 8px;
 }
-main #contactoSection .formContacto div input:focus,
-main #contactoSection .formContacto div textarea:focus {
-  background-color: #05031f;
+main #section-contact .formContacto div input:focus,
+main #section-contact .formContacto div textarea:focus {
+  background-color: #4f46cf;
   color: white;
 }
-main #contactoSection .formContacto button {
+main #section-contact .formContacto button {
   width: 150px;
   height: 30px;
   border-radius: 8px;
   margin-top: 12px;
-  background-color: #05031f;
+  background-color: #4f46cf;
   color: white;
   text-decoration: none;
   text-align: center;
   font-size: 16px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "DM Serif Text", serif;
 }
 main #sectionPayCart .tittlePayCart {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: #05031f;
+  font-family: "DM Serif Text", serif;
+  color: #4f46cf;
   margin-bottom: 10px;
 }
 main #sectionPayCart .containerPayCart .productPayCart {
@@ -447,7 +485,7 @@ main #sectionPayCart .containerPayCart .productPayCart {
   margin-top: 0px;
 }
 main #sectionPayCart .containerPayCart .productPayCart .productNamePayCart {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "DM Serif Text", serif;
   margin: 0px;
   padding: 0px;
 }
@@ -483,8 +521,8 @@ main #sectionPayCart .payContainerCartPay {
   align-items: center;
 }
 main #sectionPayCart .payContainerCartPay .spanTotalCartPay {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: #05031f;
+  font-family: "DM Serif Text", serif;
+  color: #4f46cf;
   margin-top: 10px;
   font-weight: 600;
 }
@@ -496,9 +534,18 @@ main #sectionPayCart .payContainerCartPay .linkBtnPay .btnPayCartPay {
   margin-top: 5px;
   width: 100%;
   height: 100%;
-  background-color: #05031f;
+  background-color: #4f46cf;
   color: white;
   border-radius: 5px;
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  color: white;
+  background-color: #4f46cf;
 }
 
 @media (min-width: 820px) and (max-width: 999px) {
@@ -548,10 +595,10 @@ main #sectionPayCart .payContainerCartPay .linkBtnPay .btnPayCartPay {
     width: auto;
   }
   header .headerIzquierda .title h1 {
-    color: #05031f;
+    color: #4f46cf;
     font-weight: 900;
     font-size: 50px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: "DM Serif Text", serif;
   }
   header .headerIzquierda .nav-bar {
     margin: 0px 0px 0px 15px;
@@ -573,7 +620,7 @@ main #sectionPayCart .payContainerCartPay .linkBtnPay .btnPayCartPay {
     border-radius: 5px;
   }
   header .headerIzquierda .nav-bar .nav-list .nav-item:hover {
-    background-color: #05031f;
+    background-color: #4f46cf;
   }
   header .headerIzquierda .nav-bar .nav-list .nav-item .nav-link {
     width: 100%;
@@ -584,11 +631,11 @@ main #sectionPayCart .payContainerCartPay .linkBtnPay .btnPayCartPay {
     text-align: center;
     padding: 3px;
     font-size: 18px;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-family: "DM Serif Text", serif;
   }
   header .headerIzquierda .nav-bar .nav-list .nav-item .nav-link:hover {
     color: white;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-family: "DM Serif Text", serif;
   }
   header .headerDerecha .btnCarrito {
     display: flex;
@@ -612,7 +659,7 @@ main #sectionPayCart .payContainerCartPay .linkBtnPay .btnPayCartPay {
   header .headerDerecha .btnCarrito .cuadroNotificacion #notificaciones {
     font-size: 16px;
     text-decoration: none;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-family: "DM Serif Text", serif;
     text-decoration: none;
     color: white;
   }
@@ -629,7 +676,7 @@ main #sectionPayCart .payContainerCartPay .linkBtnPay .btnPayCartPay {
     height: 90%;
     border-radius: 10px;
     padding: 5px;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-family: "DM Serif Text", serif;
     transform: translateX(100%);
     transition-duration: 0.8s;
   }
@@ -655,7 +702,7 @@ main #sectionPayCart .payContainerCartPay .linkBtnPay .btnPayCartPay {
     height: 120px;
     border: 1px solid black;
     padding: 5px;
-    background-color: rgb(201, 200, 200);
+    background-color: rgb(236, 236, 236);
   }
   header .headerDerecha .btnCarrito .modal .carritoProductos .products .imagen img {
     width: 100px;
@@ -690,7 +737,7 @@ main #sectionPayCart .payContainerCartPay .linkBtnPay .btnPayCartPay {
   header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .infoProduct .descriptionProduct .btnAñadir {
     width: 15px;
     border-radius: 5px;
-    background-color: #05031f;
+    background-color: #4f46cf;
     color: white;
     cursor: pointer;
   }
@@ -711,7 +758,7 @@ main #sectionPayCart .payContainerCartPay .linkBtnPay .btnPayCartPay {
   header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .cantProduct .spanDelete .deleteProduct {
     width: 150px;
     height: 30px;
-    background-color: #05031f;
+    background-color: #4f46cf;
     color: white;
     cursor: pointer;
     border-radius: 5px;
@@ -726,7 +773,7 @@ main #sectionPayCart .payContainerCartPay .linkBtnPay .btnPayCartPay {
     text-align: center;
   }
   header .headerDerecha .btnCarrito .modal .divTotal .total {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: "DM Serif Text", serif;
     font-weight: bold;
     font-size: 18px;
   }
@@ -744,7 +791,7 @@ main #sectionPayCart .payContainerCartPay .linkBtnPay .btnPayCartPay {
     font-size: 20px;
     border-radius: 5px;
     margin: 0px 10px;
-    background-color: #05031f;
+    background-color: #4f46cf;
     color: white;
     cursor: pointer;
   }
@@ -755,7 +802,7 @@ main #sectionPayCart .payContainerCartPay .linkBtnPay .btnPayCartPay {
     transform: translateX(0);
     transition-duration: 0.8s;
     background-color: rgba(255, 255, 255, 0.952);
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-family: "DM Serif Text", serif;
     font-weight: 700;
   }
   header .headerDerecha .btnCarrito .closeBtn {
@@ -789,32 +836,32 @@ main #sectionPayCart .payContainerCartPay .linkBtnPay .btnPayCartPay {
     width: 400px;
     transition: 0.5s;
     transition-timing-function: linear;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-family: "DM Serif Text", serif;
     font-size: 12px;
     color: white;
-    background-color: #05031f;
+    background-color: #4f46cf;
     box-shadow: 0 2px 10px black;
     cursor: default;
   }
   main .section-cards .cards-container .card:hover {
     background-color: rgb(212, 212, 212);
-    box-shadow: 3px 3px 20px #05031f;
+    box-shadow: 3px 3px 20px #4f46cf;
     font-weight: bold;
     color: black;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-family: "DM Serif Text", serif;
   }
   main .section-cards .cards-container .card:hover .imagenProductos {
-    box-shadow: 3px 3px 30px #05031f;
+    box-shadow: 3px 3px 30px #4f46cf;
     transition: 0.5s;
     transition-timing-function: linear;
-    background-color: #05031f !important;
+    background-color: #4f46cf !important;
   }
   main .section-cards .cards-container .card:hover button {
     color: white;
-    background-color: #05031f;
+    background-color: #4f46cf;
     transition: 0.5s;
     transition-timing-function: linear;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: "DM Serif Text", serif;
     cursor: pointer;
   }
   main .section-cards .cards-container .card .detailProducto .card__content .card__description .productDescription {
@@ -827,7 +874,7 @@ main #sectionPayCart .payContainerCartPay .linkBtnPay .btnPayCartPay {
     width: 150px;
     height: 45px;
     padding: 4px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: "DM Serif Text", serif;
   }
   main #sectionPayCart {
     display: flex;
@@ -840,8 +887,8 @@ main #sectionPayCart .payContainerCartPay .linkBtnPay .btnPayCartPay {
     padding: 8px;
     border-radius: 4px;
     color: white !important;
-    background-color: #05031f;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    background-color: #4f46cf;
+    font-family: "DM Serif Text", serif;
   }
   main #sectionPayCart .containerPayCart {
     display: grid;
@@ -863,7 +910,7 @@ main #sectionPayCart .payContainerCartPay .linkBtnPay .btnPayCartPay {
   }
   main #sectionPayCart .containerPayCart .productPayCart .descriptionProductPayCartContainer .descriptionProductPayCart span {
     width: 200px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: "DM Serif Text", serif;
     font-size: 16px;
     font-weight: 500;
   }
