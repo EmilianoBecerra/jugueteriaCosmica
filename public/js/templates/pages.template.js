@@ -35,7 +35,7 @@ export const productosTemplate = Handlebars.compile(`
         <a class="card">
             <article class="detailProducto">
                 <div class="card__image">
-                    <img src='./../../img/productos/{{this.imagen}}' class="imagenProductos" alt="">
+                    <img src='{{this.imagen}}' class="imagenProductos" alt="">
                 </div>
                 <div class="card__content">
                     <div class="card__description">
