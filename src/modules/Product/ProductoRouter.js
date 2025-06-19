@@ -1,6 +1,7 @@
 import { Router } from "express";
 import * as ProductoController from "./ProductoController.js";
-import {upload} from "../../middlewares/file.js";
+import upload from "../../middlewares/file.js";
+
 const ProductRouter = Router();
 
 

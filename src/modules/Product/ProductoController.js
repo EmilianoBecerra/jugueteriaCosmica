@@ -36,20 +36,21 @@ export const addProduct = async (req, res) => {
         "stock": req.body.stock,
         "categoria": req.body.categoria,
         "descripcion": req.body.descripcion,
-        "imagen": req.file.filename
+        "imagen": req.file?.path || ""
     }
-    const objectBody = body
 
     try {
-        const product = ProductModel.create(objectBody)
+        const product = await ProductModel.create(body);
         res.json(product || {})
     }
     catch (e) {
-        res.status(400).json({ e, errMSg: "Los datos ingresados para crear el producto no son correctos" })
+        res.status(400).json({
+            e,
+            errMsg: "Los datos ingresados para crear el producto no son correctos"
+        })
     }
+
 }
-
-
 
 export const update = async (req, res) => {
     const { id } = req.params;
