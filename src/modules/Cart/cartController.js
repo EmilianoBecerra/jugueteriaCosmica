@@ -1,4 +1,4 @@
-import CartModel from './CartModel.js'
+import CartModel from './cartModel.js'
 
 export const addCart = async (req,res)=>{
     const body = req.body;
