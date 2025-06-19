@@ -21,7 +21,7 @@ export const addCartBD = () => {
             total: totalCart
         }
 
-        await fetch(`${process.env.APPROUTE}/cart/pagar`, {
+        await fetch(`https://jugueteriacosmica-zcre.onrender.com/cart/pagar`, {
             method: 'POST',
             body: JSON.stringify(body),
             headers: {

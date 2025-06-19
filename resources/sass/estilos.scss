@@ -14,7 +14,7 @@ $fondoClaro: rgb(236, 236, 236);
 }
 
 html {
-  height: 100%;
+  min-height: 100vh;
   max-width: 100%;
 }
 
@@ -284,7 +284,7 @@ main {
       }
 
       .segundoEslogan {
-        margin-left: 200px;
+        margin-left: 170px;
       }
     }
 
@@ -307,7 +307,7 @@ main {
 
     img {
       height: 360px;
-      width: 360px;
+      width: 100%;
       border-radius: 5px;
       border: 3px solid $colorPrimario;
       margin-bottom: 20px;
@@ -399,6 +399,7 @@ main {
                 font-weight: 600;
               }
             }
+
             button {
               width: 100px;
               height: 30px;
@@ -412,24 +413,25 @@ main {
     }
   }
 
-  #section-alta {
+  #section-contact {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    width: 100%;
 
     h2 {
       font-size: 42px;
       font-family: $fontPrimaria;
     }
 
-    .formAlta {
-      width: 600px;
+    .formContacto {
+      width: 95%;
       display: flex;
       flex-flow: column nowrap;
       justify-content: center;
       align-items: center;
-      border: 2px solid black;
+      border: 2px solid $colorPrimario;
       padding: 8px;
       border-radius: 8px;
 
@@ -458,6 +460,8 @@ main {
           padding: 8px;
           overflow: hidden;
           border-radius: 8px;
+          border: 2px solid $colorPrimario;
+          outline: none;
 
           &:focus {
             background-color: $colorPrimario;
@@ -481,24 +485,25 @@ main {
     }
   }
 
-  #section-contact {
+  #section-alta {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    width: 100%;
 
     h2 {
       font-size: 42px;
       font-family: $fontPrimaria;
     }
 
-    .formContacto {
-      width: 600px;
+    .formAlta {
+      width: 100%;
       display: flex;
       flex-flow: column nowrap;
       justify-content: center;
       align-items: center;
-      border: 2px solid black;
+      border: 2px solid $colorPrimario;
       padding: 8px;
       border-radius: 8px;
 
@@ -516,6 +521,28 @@ main {
           font-family: $fontPrimaria;
         }
 
+        #archivo {
+          display: none;
+        }
+
+        .labelArchivo {
+          display: flex;
+          padding: 8px;
+          border: 2px solid black;
+          width: 100%;
+          height: 30px;
+          border-radius: 8px;
+          font-size: 16px;
+          font-family: $fontPrimaria;
+          text-align: center;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          background-color: $colorPrimario;
+          font-weight: normal;
+          margin-top: 8px;
+        }
+
         input,
         textarea {
           width: 100%;
@@ -527,12 +554,16 @@ main {
           padding: 8px;
           overflow: hidden;
           border-radius: 8px;
+          border: 2px solid $colorPrimario;
+          outline: none;
 
           &:focus {
             background-color: $colorPrimario;
             color: white;
           }
         }
+
+
       }
 
       button {
@@ -636,9 +667,11 @@ main {
 }
 
 footer {
-  position: fixed;
+  position: static;
   width: 100vw;
   bottom: 0;
+  margin-top: 10px;
+  padding: 10px 0px;
   text-align: center;
   color: white;
   background-color: $colorPrimario;
@@ -647,52 +680,51 @@ footer {
 
 @media (min-width: 820px) and (max-width: 999px) {
   header {
-    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
 
     .headerIzquierda {
       flex-flow: row nowrap;
-      align-items: center;
-      justify-content: center;
+      align-items: baseline;
+      justify-content: start;
+      width: auto;
+
+      .title {
+        h1 {
+          font-size: 1.3cm;
+        }
+      }
 
       .nav-bar {
-        width: 280px;
-        margin-left: 20px;
+        margin-left: 50px;
+        width: 20%;
 
-        .nav-list {
-          .nav-item {
-            margin-left: 5px;
-            padding: 0px 5px 0px 2px;
-
-            .nav-link {
-              font-size: 16px;
-            }
-          }
+        .nav-item {
+          font-size: 1.2em;
         }
       }
     }
-
-    .headerDerecha .btnCarrito .cuadroNotificacion {
-      top: 10px;
-    }
-
-    .headerDerecha .btnCarrito .modal {
-      transform: translateX(100%);
-      transition-duration: 0.6s;
-    }
-
-    .headerDerecha .btnCarrito .modalVisible {
-      transform: translateX(0);
-      transition-duration: 0.6s;
-    }
-
   }
 
-  main .section-cards .cards-container {
-    display: grid;
-    grid-template-columns: repeat(2, 5fr);
-    grid-auto-rows: 1;
-    gap: 26px;
+  main {
+    #section-home {
+      .presentation {
+        font-size: 0.8cm;
+
+        .segundoEslogan {
+          margin-left: 400px;
+        }
+
+        .btn-products{
+          width: 50%;
+          margin: auto;
+          margin-bottom: 20px;
+        }
+      }
+
+    }
   }
+
 }
 
 

@@ -8,7 +8,7 @@
 }
 
 html {
-  height: 100%;
+  min-height: 100vh;
   max-width: 100%;
 }
 
@@ -236,7 +236,7 @@ main #section-home .eslogan h2 {
   color: #4f46cf;
 }
 main #section-home .eslogan .segundoEslogan {
-  margin-left: 200px;
+  margin-left: 170px;
 }
 main #section-home .btn-products {
   margin: 10px 0px;
@@ -254,7 +254,7 @@ main #section-home .btn-products button a {
 }
 main #section-home img {
   height: 360px;
-  width: 360px;
+  width: 100%;
   border-radius: 5px;
   border: 3px solid #4f46cf;
   margin-bottom: 20px;
@@ -343,85 +343,24 @@ main #section-cards .cards-container .card .detailProducto .card__content button
   font-family: "DM Serif Text", serif;
   align-self: center;
 }
-main #section-alta {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-}
-main #section-alta h2 {
-  font-size: 42px;
-  font-family: "DM Serif Text", serif;
-}
-main #section-alta .formAlta {
-  width: 600px;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid black;
-  padding: 8px;
-  border-radius: 8px;
-}
-main #section-alta .formAlta div {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-}
-main #section-alta .formAlta div label {
-  font-weight: 600;
-  font-size: 16px;
-  margin-bottom: 10px;
-  font-family: "DM Serif Text", serif;
-}
-main #section-alta .formAlta div input,
-main #section-alta .formAlta div textarea {
-  width: 100%;
-  height: 30px;
-  margin-bottom: 10px;
-  text-align: center;
-  font-family: "DM Serif Text", serif;
-  font-size: 16px;
-  padding: 8px;
-  overflow: hidden;
-  border-radius: 8px;
-}
-main #section-alta .formAlta div input:focus,
-main #section-alta .formAlta div textarea:focus {
-  background-color: #4f46cf;
-  color: white;
-}
-main #section-alta .formAlta button {
-  width: 150px;
-  height: 30px;
-  border-radius: 8px;
-  margin-top: 12px;
-  background-color: #4f46cf;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-  font-size: 16px;
-  font-family: "DM Serif Text", serif;
-}
 main #section-contact {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 main #section-contact h2 {
   font-size: 42px;
   font-family: "DM Serif Text", serif;
 }
 main #section-contact .formContacto {
-  width: 600px;
+  width: 95%;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  border: 2px solid black;
+  border: 2px solid #4f46cf;
   padding: 8px;
   border-radius: 8px;
 }
@@ -449,6 +388,8 @@ main #section-contact .formContacto div textarea {
   padding: 8px;
   overflow: hidden;
   border-radius: 8px;
+  border: 2px solid #4f46cf;
+  outline: none;
 }
 main #section-contact .formContacto div input:focus,
 main #section-contact .formContacto div textarea:focus {
@@ -456,6 +397,91 @@ main #section-contact .formContacto div textarea:focus {
   color: white;
 }
 main #section-contact .formContacto button {
+  width: 150px;
+  height: 30px;
+  border-radius: 8px;
+  margin-top: 12px;
+  background-color: #4f46cf;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-size: 16px;
+  font-family: "DM Serif Text", serif;
+}
+main #section-alta {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+main #section-alta h2 {
+  font-size: 42px;
+  font-family: "DM Serif Text", serif;
+}
+main #section-alta .formAlta {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #4f46cf;
+  padding: 8px;
+  border-radius: 8px;
+}
+main #section-alta .formAlta div {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+main #section-alta .formAlta div label {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-family: "DM Serif Text", serif;
+}
+main #section-alta .formAlta div #archivo {
+  display: none;
+}
+main #section-alta .formAlta div .labelArchivo {
+  display: flex;
+  padding: 8px;
+  border: 2px solid black;
+  width: 100%;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: "DM Serif Text", serif;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #4f46cf;
+  font-weight: normal;
+  margin-top: 8px;
+}
+main #section-alta .formAlta div input,
+main #section-alta .formAlta div textarea {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: "DM Serif Text", serif;
+  font-size: 16px;
+  padding: 8px;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 2px solid #4f46cf;
+  outline: none;
+}
+main #section-alta .formAlta div input:focus,
+main #section-alta .formAlta div textarea:focus {
+  background-color: #4f46cf;
+  color: white;
+}
+main #section-alta .formAlta button {
   width: 150px;
   height: 30px;
   border-radius: 8px;
@@ -533,9 +559,11 @@ main #sectionPayCart .payContainerCartPay .linkBtnPay .btnPayCartPay {
 }
 
 footer {
-  position: fixed;
+  position: static;
   width: 100vw;
   bottom: 0;
+  margin-top: 10px;
+  padding: 10px 0px;
   text-align: center;
   color: white;
   background-color: #4f46cf;
@@ -543,40 +571,35 @@ footer {
 
 @media (min-width: 820px) and (max-width: 999px) {
   header {
-    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
   }
   header .headerIzquierda {
     flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
+    align-items: baseline;
+    justify-content: start;
+    width: auto;
+  }
+  header .headerIzquierda .title h1 {
+    font-size: 1.3cm;
   }
   header .headerIzquierda .nav-bar {
-    width: 280px;
-    margin-left: 20px;
+    margin-left: 50px;
+    width: 20%;
   }
-  header .headerIzquierda .nav-bar .nav-list .nav-item {
-    margin-left: 5px;
-    padding: 0px 5px 0px 2px;
+  header .headerIzquierda .nav-bar .nav-item {
+    font-size: 1.2em;
   }
-  header .headerIzquierda .nav-bar .nav-list .nav-item .nav-link {
-    font-size: 16px;
+  main #section-home .presentation {
+    font-size: 0.8cm;
   }
-  header .headerDerecha .btnCarrito .cuadroNotificacion {
-    top: 10px;
+  main #section-home .presentation .segundoEslogan {
+    margin-left: 400px;
   }
-  header .headerDerecha .btnCarrito .modal {
-    transform: translateX(100%);
-    transition-duration: 0.6s;
-  }
-  header .headerDerecha .btnCarrito .modalVisible {
-    transform: translateX(0);
-    transition-duration: 0.6s;
-  }
-  main .section-cards .cards-container {
-    display: grid;
-    grid-template-columns: repeat(2, 5fr);
-    grid-auto-rows: 1;
-    gap: 26px;
+  main #section-home .presentation .btn-products {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 20px;
   }
 }
 @media (min-width: 1000px) and (max-width: 1800px) {

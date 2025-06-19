@@ -51,6 +51,8 @@ export const productosTemplate = Handlebars.compile(`
     </div>
 </section>
 `)
+
+
 export const altaTemplate = Handlebars.compile(`
     <section id="section-alta">
         
@@ -96,8 +98,8 @@ export const altaTemplate = Handlebars.compile(`
                 <span class="errMsg"></span>
             </div>
             <div class="field">
-                <label for="imagen">Imagen *</label>
-                <input type="file" name="archivo"  class="obligatorio" >
+                <label for="archivo" class="labelArchivo"> Subir archivo *</label>
+                <input type="file" name="archivo"  class="obligatorio" id="archivo" >
             </div>
 
             <button type="submit" id="envioForm" clase="envio">Crear Producto</button>
@@ -123,7 +125,7 @@ export const contactoTemplate = Handlebars.compile(`
                 <textarea name="comentario" id="comentario" cols="30" rows="10"></textarea>
             </div>
             <div>
-                <button type="submit"> Enviar consulta </button>
+                <button type="submit" > Enviar consulta </button>
 
         </form>
     </section>

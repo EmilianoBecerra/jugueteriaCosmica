@@ -4,7 +4,7 @@ export const cartTemplate = Handlebars.compile(`
     {{#each cart}}
         <div class="products">
             <div class="imagen">
-                <img src="./../../img/productos/{{this.imagen}}" alt="">
+                <img src="{{this.imagen}}" alt="">
             </div>
             <div class="product">
                 <div class="infoProduct">
