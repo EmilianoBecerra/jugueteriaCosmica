@@ -8,13 +8,13 @@
 }
 
 html {
-  min-height: 100vh;
+  min-height: 100hv;
   max-width: 100%;
 }
 
 body {
   background-color: rgb(236, 236, 236);
-  height: 100%;
+  min-height: 100%;
   width: 100%;
 }
 
@@ -219,6 +219,7 @@ header .headerDerecha .btnCarrito .closeBtn {
 main {
   padding: 10px;
   width: 100%;
+  height: 100%;
 }
 main #section-home {
   height: 100%;
@@ -569,160 +570,54 @@ footer {
   background-color: #4f46cf;
 }
 
-@media (min-width: 820px) and (max-width: 999px) {
+@media (min-width: 1000px) and (max-width: 2000px) {
   header {
-    padding: 10px;
-    width: 100%;
+    height: auto;
+    padding: 15px;
   }
   header .headerIzquierda {
     flex-flow: row nowrap;
-    align-items: baseline;
-    justify-content: start;
-    width: auto;
+    align-items: end;
+    justify-content: center;
+    flex: auto;
   }
-  header .headerIzquierda .title h1 {
-    font-size: 1.3cm;
-  }
-  header .headerIzquierda .nav-bar {
-    margin-left: 50px;
-    width: 20%;
-  }
-  header .headerIzquierda .nav-bar .nav-item {
-    font-size: 1.2em;
-  }
-  main #section-home .presentation {
-    font-size: 0.8cm;
-  }
-  main #section-home .presentation .segundoEslogan {
-    margin-left: 400px;
-  }
-  main #section-home .presentation .btn-products {
-    width: 50%;
-    margin: auto;
-    margin-bottom: 20px;
-  }
-}
-@media (min-width: 1000px) and (max-width: 1800px) {
-  header .headerIzquierda {
-    flex-flow: row nowrap;
-    align-items: baseline;
-  }
-  header .headerIzquierda .title {
-    width: auto;
-  }
-  header .headerIzquierda .title h1 {
-    color: #4f46cf;
-    font-weight: 900;
-    font-size: 50px;
-    font-family: "DM Serif Text", serif;
-  }
-  header .headerIzquierda .nav-bar {
-    margin: 0px 0px 0px 15px;
-    width: 300px;
-    height: 70px;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    align-items: center;
+  header .headerIzquierda h1 {
+    font-size: 1.5cm;
+    cursor: pointer;
   }
   header .headerIzquierda .nav-bar .nav-list {
-    width: 100px;
-  }
-  header .headerIzquierda .nav-bar .nav-list .nav-item {
-    width: 90px;
-    list-style: none;
-    border: 2px solid black;
-    margin: 0px 10px;
-    border-radius: 5px;
-  }
-  header .headerIzquierda .nav-bar .nav-list .nav-item:hover {
-    background-color: #4f46cf;
+    flex-flow: row nowrap;
+    justify-content: space-around;
   }
   header .headerIzquierda .nav-bar .nav-list .nav-item .nav-link {
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    text-decoration-color: none;
-    color: black;
-    text-align: center;
-    padding: 3px;
-    font-size: 18px;
-    font-family: "DM Serif Text", serif;
-  }
-  header .headerIzquierda .nav-bar .nav-list .nav-item .nav-link:hover {
-    color: white;
-    font-family: "DM Serif Text", serif;
-  }
-  header .headerDerecha .btnCarrito {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
+    font-size: 0.5cm;
   }
   header .headerDerecha .btnCarrito .cuadroNotificacion {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 27px;
-    height: 27px;
-    background-color: #369743;
-    padding: 2px;
-    top: 24px;
-    right: 40px;
-    border-radius: 50%;
-  }
-  header .headerDerecha .btnCarrito .cuadroNotificacion #notificaciones {
-    font-size: 16px;
-    text-decoration: none;
-    font-family: "DM Serif Text", serif;
-    text-decoration: none;
-    color: white;
+    width: 30px;
+    height: 30px;
+    top: 20px;
+    right: 35px;
   }
   header .headerDerecha .btnCarrito .imgCarrito .icon {
-    width: 47px;
-    height: 47px;
-    margin: 0px 8px;
+    width: 40px;
+    height: 40px;
   }
   header .headerDerecha .btnCarrito .modal {
-    position: fixed;
-    right: 6px;
-    top: 10px;
-    width: 42%;
-    height: 90%;
-    border-radius: 10px;
-    padding: 5px;
-    font-family: "DM Serif Text", serif;
-    transform: translateX(100%);
-    transition-duration: 0.8s;
-  }
-  header .headerDerecha .btnCarrito .modal .carritoProductos {
-    width: 100%;
-    height: 80%;
-    overflow: auto;
+    top: 30px;
+    width: 50%;
   }
   header .headerDerecha .btnCarrito .modal .carritoProductos .products {
     display: grid;
-    grid-template-columns: 1fr 8fr;
-    grid-template-rows: 0.5fr;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 90px;
     margin: 5px;
     border-bottom: 1px solid black;
     padding: 10px;
     font-size: 18px;
   }
-  header .headerDerecha .btnCarrito .modal .carritoProductos .products .imagen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 120px;
-    height: 120px;
-    border: 1px solid black;
-    padding: 5px;
-    background-color: rgb(236, 236, 236);
-  }
-  header .headerDerecha .btnCarrito .modal .carritoProductos .products .imagen img {
-    width: 100px;
-    height: 100px;
+  header .headerDerecha .btnCarrito .modal .carritoProductos .products img {
+    width: 100%;
+    height: 100%;
   }
   header .headerDerecha .btnCarrito .modal .carritoProductos .products .product {
     display: flex;
@@ -730,7 +625,6 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    font-size: 18px;
   }
   header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .infoProduct {
     display: flex;
@@ -755,10 +649,6 @@ footer {
     border-radius: 5px;
     background-color: #4f46cf;
     color: white;
-    cursor: pointer;
-  }
-  header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .infoProduct .descriptionProduct .btnAñadir:hover {
-    background-color: #17144d;
   }
   header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .cantProduct {
     display: flex;
@@ -767,31 +657,14 @@ footer {
     align-items: center;
   }
   header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .cantProduct .spanDelete {
-    width: auto;
-    height: auto;
-    margin: 14px;
+    width: 80px;
+    margin: 0px 0px 0px 14px;
   }
   header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .cantProduct .spanDelete .deleteProduct {
-    width: 150px;
-    height: 30px;
+    width: 100%;
+    height: 20px;
     background-color: #4f46cf;
     color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 16px;
-  }
-  header .headerDerecha .btnCarrito .modal .carritoProductos .products .product .cantProduct .spanDelete .deleteProduct:hover {
-    background-color: #17144d;
-  }
-  header .headerDerecha .btnCarrito .modal .divTotal {
-    margin: 10px;
-    text-align: center;
-  }
-  header .headerDerecha .btnCarrito .modal .divTotal .total {
-    font-family: "DM Serif Text", serif;
-    font-weight: bold;
-    font-size: 18px;
   }
   header .headerDerecha .btnCarrito .modal .divPagar {
     width: 100%;
@@ -800,150 +673,232 @@ footer {
     justify-content: center;
     align-items: center;
   }
-  header .headerDerecha .btnCarrito .modal .divPagar .btnPagar {
-    margin: 25px 0px 10px 100px;
-    width: 150px;
-    height: 30px;
-    font-size: 20px;
-    border-radius: 5px;
-    margin: 0px 10px;
-    background-color: #4f46cf;
+  header .headerDerecha .btnCarrito .modal .divPagar .linkPay {
+    text-decoration: none;
     color: white;
-    cursor: pointer;
   }
-  header .headerDerecha .btnCarrito .modal .divPagar .btnPagar:hover {
-    background-color: #17144d;
+  header .headerDerecha .btnCarrito .modal .divPagar .linkPay .btnPagar {
+    width: 140px;
+    height: 35px;
+    font-size: 1em;
   }
   header .headerDerecha .btnCarrito .modalVisible {
-    transform: translateX(0);
-    transition-duration: 0.8s;
-    background-color: rgba(255, 255, 255, 0.952);
-    font-family: "DM Serif Text", serif;
-    font-weight: 700;
+    top: 30px;
   }
-  header .headerDerecha .btnCarrito .closeBtn {
-    width: 24px;
+  main {
+    padding: 15px;
+    width: 100%;
+    height: 100%;
+  }
+  main #section-home .presentation {
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: baseline;
+  }
+  main #section-home .eslogan h2 {
+    font-size: 1.5cm;
+    margin: 15px;
+  }
+  main #section-home .eslogan .segundoEslogan {
+    margin: 15px;
+    font-size: 1.5cm;
+  }
+  main #section-home .btn-products button {
+    cursor: pointer;
+    font-size: 0.7cm;
+  }
+  main #section-home img {
+    margin-top: 30px;
+    margin-left: 50px;
+    height: 360px;
+    width: 30%;
+    border-radius: 5px;
+    border: 3px solid #4f46cf;
+  }
+  main #section-home .comentarios {
+    margin-top: 30px;
     position: absolute;
-    top: 2px;
-    right: 10px;
-    background-color: black;
-    padding: 2px;
-    border-radius: 50%;
-    text-align: center;
-    color: white;
-    cursor: pointer;
-    margin-bottom: 30px;
+    right: 10%;
+    top: 45%;
+    width: 50%;
   }
-  header .headerDerecha .btnCarrito .closeBtn:hover {
-    background-color: #17144d;
+  main #section-home .comentarios .comentario-card {
+    margin-bottom: 10px;
+    border: 1px solid #4f46cf;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: rgba(79, 70, 207, 0.1725490196);
   }
-  header .btnLink-container .icon {
-    width: 40px;
-    height: 40px;
-    margin: 0px 8px;
+  main #section-home .comentarios .comentario-card p {
+    padding: 10px;
   }
-  main .section-cards .cards-container {
+  main #section-cards {
+    display: flex;
+    justify-content: center;
+  }
+  main #section-cards .cards-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 1fr;
-    gap: 60px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 1;
+    row-gap: 2px;
+    padding: 10px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 2px rgba(68, 68, 68, 0.575), -1px -1px 2px rgba(68, 68, 68, 0.575);
+    width: 100%;
   }
-  main .section-cards .cards-container .card {
-    width: 400px;
-    transition: 0.5s;
-    transition-timing-function: linear;
+  main #section-cards .cards-container .card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
     font-family: "DM Serif Text", serif;
-    font-size: 12px;
     color: white;
     background-color: #4f46cf;
-    box-shadow: 0 2px 10px black;
-    cursor: default;
+    border-radius: 2px;
   }
-  main .section-cards .cards-container .card:hover {
-    background-color: rgb(212, 212, 212);
-    box-shadow: 3px 3px 20px #4f46cf;
-    font-weight: bold;
-    color: black;
+  main #section-cards .cards-container .card .detailProducto {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 100%;
     font-family: "DM Serif Text", serif;
+    overflow: hidden;
+    word-break: break-all;
+    padding: 5px;
   }
-  main .section-cards .cards-container .card:hover .imagenProductos {
-    box-shadow: 3px 3px 30px #4f46cf;
-    transition: 0.5s;
-    transition-timing-function: linear;
-    background-color: #4f46cf !important;
+  main #section-cards .cards-container .card .detailProducto .card__image {
+    width: 50%;
+    height: 200px;
+    margin-right: 5px;
+    display: flex;
   }
-  main .section-cards .cards-container .card:hover button {
-    color: white;
-    background-color: #4f46cf;
-    transition: 0.5s;
-    transition-timing-function: linear;
-    font-family: "DM Serif Text", serif;
-    cursor: pointer;
+  main #section-cards .cards-container .card .detailProducto .card__image .imagenProductos {
+    width: 100%;
+    border-radius: 5px;
   }
-  main .section-cards .cards-container .card .detailProducto .card__content .card__description .productDescription {
+  main #section-cards .cards-container .card .detailProducto .card__content {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    width: 50%;
+    height: 100%;
+  }
+  main #section-cards .cards-container .card .detailProducto .card__content .card__description .nombreProducto {
+    text-transform: capitalize;
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+  main #section-cards .cards-container .card .detailProducto .card__content .card__description .productDescription {
+    margin-bottom: 15px;
     font-size: 16px;
   }
-  main .section-cards .cards-container .card .detailProducto .precio {
-    font-size: 30px;
+  main #section-cards .cards-container .card .detailProducto .card__content .card__description .precio {
+    font-size: 22px;
+    font-weight: 600;
   }
-  main .section-cards .cards-container .card button {
-    width: 150px;
-    height: 45px;
-    padding: 4px;
+  main #section-cards .cards-container .card .detailProducto .card__content button {
+    width: 100px;
+    height: 30px;
+    border-radius: 8px;
     font-family: "DM Serif Text", serif;
+    align-self: center;
   }
-  main #sectionPayCart {
+  main #section-contact {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  main #section-contact .formContacto {
+    margin: 10px;
+    width: 50%;
+    padding: 50px;
+  }
+  main #section-contact .formContacto textarea {
+    field-sizing: content;
+    min-height: 150px;
+  }
+  main #section-contact button {
+    cursor: pointer;
+  }
+  main #section-alta {
+    min-height: 100%;
+  }
+  main #section-alta .formAlta {
+    width: 50%;
+  }
+  main #sectionPayCart .tittlePayCart {
+    font-family: "DM Serif Text", serif;
+    color: #4f46cf;
+    margin-bottom: 10px;
+  }
+  main #sectionPayCart .containerPayCart .productPayCart {
+    margin-left: 10px;
+    padding: 0px;
+    margin-top: 0px;
+  }
+  main #sectionPayCart .containerPayCart .productPayCart .productNamePayCart {
+    font-family: "DM Serif Text", serif;
+    margin: 0px;
+    padding: 0px;
+  }
+  main #sectionPayCart .containerPayCart .productPayCart .descriptionProductPayCartContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid black;
+    padding: 5px;
+  }
+  main #sectionPayCart .containerPayCart .productPayCart .descriptionProductPayCartContainer .imageProductPayCart {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  main #sectionPayCart .containerPayCart .productPayCart .descriptionProductPayCartContainer .descriptionProductPayCart {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 10px;
+  }
+  main #sectionPayCart .containerPayCart .productPayCart .descriptionProductPayCartContainer .descriptionProductPayCart p {
+    margin: 5px;
+    padding: 0px;
+  }
+  main #sectionPayCart .payContainerCartPay {
+    width: 100%;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
   }
-  main #sectionPayCart .tittlePayCart {
-    width: 100%;
-    padding: 8px;
-    border-radius: 4px;
-    color: white !important;
-    background-color: #4f46cf;
-    font-family: "DM Serif Text", serif;
-  }
-  main #sectionPayCart .containerPayCart {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    width: 90%;
-  }
-  main #sectionPayCart .containerPayCart .productPayCart .descriptionProductPayCartContainer {
-    width: 100%;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-  }
-  main #sectionPayCart .containerPayCart .productPayCart .descriptionProductPayCartContainer .descriptionProductPayCart {
-    width: 80%;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-  }
-  main #sectionPayCart .containerPayCart .productPayCart .descriptionProductPayCartContainer .descriptionProductPayCart span {
-    width: 200px;
-    font-family: "DM Serif Text", serif;
-    font-size: 16px;
-    font-weight: 500;
-  }
-  main #sectionPayCart .payContainerCartPay {
-    width: 100%;
-    height: 100px;
-  }
   main #sectionPayCart .payContainerCartPay .spanTotalCartPay {
-    margin: 10px;
+    font-family: "DM Serif Text", serif;
+    color: #4f46cf;
+    margin-top: 10px;
+    font-weight: 600;
   }
-  main #sectionPayCart .payContainerCartPay .btnPayCartPay {
-    font-size: 18px;
+  main #sectionPayCart .payContainerCartPay .linkBtnPay {
+    width: 150px;
+    height: 30px;
   }
-  main #sectionPayCart .payContainerCartPay .btnPayCartPay:hover {
+  main #sectionPayCart .payContainerCartPay .linkBtnPay .btnPayCartPay {
+    margin-top: 5px;
+    width: 100%;
+    height: 100%;
+    background-color: #4f46cf;
     color: white;
-    background-color: #17144d;
-    cursor: pointer;
+    border-radius: 5px;
+  }
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
   }
 }
 

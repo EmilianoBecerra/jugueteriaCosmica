@@ -109,7 +109,6 @@ export const altaTemplate = Handlebars.compile(`
 
 export const contactoTemplate = Handlebars.compile(`
     <section  id="section-contact">
-
         <h2> Contacto </h2>
         <form action="0" class="formContacto">
             <div class="field">
