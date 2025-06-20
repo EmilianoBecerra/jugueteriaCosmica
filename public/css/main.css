@@ -734,6 +734,7 @@ footer {
   }
   main #section-cards .cards-container {
     grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
   }
   main #section-cards .cards-container .card {
     display: flex;
@@ -794,6 +795,7 @@ footer {
     border-radius: 8px;
     font-family: "DM Serif Text", serif;
     align-self: center;
+    cursor: pointer;
   }
   main #section-contact {
     width: 100%;

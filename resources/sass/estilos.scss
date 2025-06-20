@@ -894,6 +894,7 @@ footer {
     #section-cards {
       .cards-container {
         grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
         .card {
           display: flex;
           flex-flow: column nowrap;
@@ -960,6 +961,7 @@ footer {
                 border-radius: 8px;
                 font-family: $fontTexto;
                 align-self: center;
+                cursor: pointer;
               }
             }
           }
