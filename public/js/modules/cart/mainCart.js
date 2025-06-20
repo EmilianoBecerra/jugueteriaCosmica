@@ -35,64 +35,64 @@ function updateState() {
 }
 
 document.body.addEventListener("click", async ev => {
-    const element = ev.target.closest(".añadirAlCarrito")
+    const element = ev.target.closest(".añadirAlCarrito");
     if (element) {
 
-        ev.preventDefault()
+        ev.preventDefault();
 
-        const idProduct = element.getAttribute("idproduct")
-        const found = cart.find(producto => producto.id == idProduct)
+        const idProduct = element.getAttribute("idproduct");
+        const found = cart.find(producto => producto.id == idProduct);
 
         if (found) {
-            found.cantidad++
-            found.subtotal = found.precio * found.cantidad
+            found.cantidad++;
+            found.subtotal = found.precio * found.cantidad;
         }
 
         else {
-            const response = await fetch(`https://jugueteriacosmica-zcre.onrender.com/api/productos` + idProduct)
-            const producto = await response.json()
-            producto.cantidad = 1
-            producto.subtotal = producto.precio
-            cart.push(producto)
+            const response = await fetch(`https://jugueteriacosmica-zcre.onrender.com/api/productos/` + idProduct);
+            const producto = await response.json();
+            producto.cantidad = 1;
+            producto.subtotal = producto.precio;
+            cart.push(producto);
         }
 
-        updateState()
+        updateState();
     }
 })
 
 document.body.addEventListener("click", ev => {
-    const element = ev.target.closest(".restarBtn")
+    const element = ev.target.closest(".restarBtn");
     if (element) {
 
-        ev.preventDefault()
+        ev.preventDefault();
 
-        const idProduct = element.getAttribute("idproduct")
+        const idProduct = element.getAttribute("idproduct");
 
-        const found = cart.find(producto => producto.id == idProduct)
+        const found = cart.find(producto => producto.id == idProduct);
 
         if (found) {
-            found.cantidad = found.cantidad > 0 ? found.cantidad - 1 : 0
-            found.subtotal = found.precio * found.cantidad
+            found.cantidad = found.cantidad > 0 ? found.cantidad - 1 : 0;
+            found.subtotal = found.precio * found.cantidad;
         }
 
-        updateState()
+        updateState();
     }
 })
 
 document.body.addEventListener("click", ev => {
-    const element = ev.target.closest(".deleteProduct")
+    const element = ev.target.closest(".deleteProduct");
     if (element) {
-        ev.preventDefault()
+        ev.preventDefault();
 
-        const idProduct = element.getAttribute("idproduct")
+        const idProduct = element.getAttribute("idproduct");
 
-        const found = cart.find(producto => producto.id == idProduct)
+        const found = cart.find(producto => producto.id == idProduct);
 
         if (found) {
-            const findProductIndex = cart.indexOf(found)
-            cart.splice(findProductIndex, 1)
+            const findProductIndex = cart.indexOf(found);
+            cart.splice(findProductIndex, 1);
         }
 
-        updateState()
+        updateState();
     }
 })
